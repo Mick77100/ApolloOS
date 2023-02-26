@@ -430,7 +430,7 @@ insop (int w, const struct m68k_incant *opcode)
 static void
 add_fix (int width, struct m68k_exp *exp, int pc_rel, int pc_fix)
 {
-  the_ins.reloc[the_ins.nrel].n = (width == 'B' || width == '[' || width == '3'
+  the_ins.reloc[the_ins.nrel].n = (width == 'B' || width == '3'
 				   ? the_ins.numo * 2 - 1
 				   : (width == 'b'
 				      ? the_ins.numo * 2 + 1
@@ -808,22 +808,22 @@ static void m68k_init_arch (void);
    Please check tc-m68k.h:md_prepare_relax_scan if changing this table.  */
 relax_typeS md_relax_table[] =
 {
-  {   254,   -254,  0, TAB (BRANCHBWL, SHORT) },
+  {   127,   -128,  0, TAB (BRANCHBWL, SHORT) },
   { 32767, -32768,  2, TAB (BRANCHBWL, LONG) },
   {     0,	0,  4, 0 },
   {     1,	1,  0, 0 },
 
-  {   254,   -254,  0, TAB (BRABSJUNC, SHORT) },
+  {   127,   -128,  0, TAB (BRABSJUNC, SHORT) },
   { 32767, -32768,  2, TAB (BRABSJUNC, LONG) },
   {	0,	0,  4, 0 },
   {	1,	1,  0, 0 },
 
-  {   254,   -254,  0, TAB (BRABSJCOND, SHORT) },
+  {   127,   -128,  0, TAB (BRABSJCOND, SHORT) },
   { 32767, -32768,  2, TAB (BRABSJCOND, LONG) },
   {	0,	0,  6, 0 },
   {	1,	1,  0, 0 },
 
-  {   254,   -254,  0, TAB (BRANCHBW, SHORT) },
+  {   127,   -128,  0, TAB (BRANCHBW, SHORT) },
   {	0,	0,  2, 0 },
   {	1,	1,  0, 0 },
   {	1,	1,  0, 0 },
@@ -960,7 +960,6 @@ const pseudo_typeS mote_pseudo_table[] =
 #define SEXT(X)		((TRUNC (X) ^ 0x80000000) - 0x80000000)
 
 #define issbyte(x)	((valueT) SEXT (x) + 0x80 < 0x100)
-#define issbyte2(x)	((valueT) SEXT (x) + 254 <= 508)
 #define isubyte(x)	((valueT) TRUNC (x) < 0x100)
 #define issword(x)	((valueT) SEXT (x) + 0x8000 < 0x10000)
 #define isuword(x)	((valueT) TRUNC (x) < 0x10000)
@@ -2779,7 +2778,7 @@ m68k_ip (char *instring)
                              contiguous.  */
 			  frag_grow (14);
 			  nextword += baseo & 0xff;
-                  	  addword (nextword);
+			  addword (nextword);
 			  add_frag (adds (&opP->disp),
 				    SEXT (offs (&opP->disp)),
 				    TAB (PCINDEX, SZ_UNDEF));
@@ -3003,30 +3002,21 @@ m68k_ip (char *instring)
 	      break;
 	    case 'B':
 	      if (!issbyte (tmpreg))
-		opP->error = _("out of Brange");
-	      the_ins.opcode[the_ins.numo - 1] |= tmpreg & 0xff;
-	      if (isvar (&opP->disp))
-		the_ins.reloc[the_ins.nrel - 1].n = opcode->m_codenum * 2 - 1;
-	      break;
-	    case '[':
-	      if (!issbyte2 (tmpreg))
-		opP->error = _("out of [range");
-              if (tmpreg<-128 || tmpreg>126)  tmpreg|=1; //APOLLO
-
+		opP->error = _("out of range");
 	      the_ins.opcode[the_ins.numo - 1] |= tmpreg & 0xff;
 	      if (isvar (&opP->disp))
 		the_ins.reloc[the_ins.nrel - 1].n = opcode->m_codenum * 2 - 1;
 	      break;
 	    case 'w':
 	      if (!isword (tmpreg))
-		opP->error = _("out of wrange");
+		opP->error = _("out of range");
 	      insop (tmpreg, opcode);
 	      if (isvar (&opP->disp))
 		the_ins.reloc[the_ins.nrel - 1].n = (opcode->m_codenum) * 2;
 	      break;
 	    case 'W':
 	      if (!issword (tmpreg))
-		opP->error = _("out of Wrange");
+		opP->error = _("out of range");
 	      insop (tmpreg, opcode);
 	      if (isvar (&opP->disp))
 		the_ins.reloc[the_ins.nrel - 1].n = (opcode->m_codenum) * 2;
@@ -3061,17 +3051,11 @@ m68k_ip (char *instring)
 
 	case 'B':
 	  tmpreg = get_num (&opP->disp, 90);
-          tmpreg += 0x400;
 
 	  switch (s[1])
 	    {
 	    case 'B':
 	      add_fix ('B', &opP->disp, 1, -1);
-	      break;
-	    case '[':
-              if (opP->disp.exp.X_add_number <-128 || opP->disp.exp.X_add_number >126) opP->disp.exp.X_add_number |=1;    //Apollo 68080  BRA.B
-              
-	      add_fix ('[', &opP->disp, 1, -1);
 	      break;
 	    case 'W':
 	      add_fix ('w', &opP->disp, 1, 0);
@@ -3155,15 +3139,28 @@ m68k_ip (char *instring)
 			   : TAB (BRANCHBW, SZ_UNDEF)));
 	      break;
 	    case 'w':
-	      add_fix ('w', &opP->disp, 1, 0);
+	      if (isvar (&opP->disp))
+		{
+		  /* Check for DBcc instructions.  We can relax them,
+		     but only if we have long branches and/or absolute
+		     jumps.  */
+		  if (((the_ins.opcode[0] & 0xf0f8) == 0x50c8)
+		      && (HAVE_LONG_BRANCH (current_architecture)
+			  || ! flag_keep_pcrel))
+		    {
+		      if (HAVE_LONG_BRANCH (current_architecture))
+			add_frag (adds (&opP->disp),
+				  SEXT (offs (&opP->disp)),
+				  TAB (DBCCLBR, SZ_UNDEF));
+		      else
+			add_frag (adds (&opP->disp),
+				  SEXT (offs (&opP->disp)),
+				  TAB (DBCCABSJ, SZ_UNDEF));
+		      break;
+		    }
+		  add_fix ('w', &opP->disp, 1, 0);
+		}
 	      addword (0);
-	      break;
-	    case '~':   // special
-
-              opP->disp.exp.X_add_number |=1;    //Apollo 68080  DBRA.L
-	      add_fix ('w', &opP->disp, 1, 0);
-	      addword (0);
-
 	      break;
 	    case 'C':		/* Fixed size LONG coproc branches.  */
 	      add_fix ('l', &opP->disp, 1, 0);
@@ -4338,9 +4335,6 @@ md_assemble (char *str)
 	    case 'B':
 	      n = 1;
 	      break;
-	    case '[':
-	      n = 1;
-	      break;
 	    case 'b':
 	      n = 1;
 	      break;
@@ -4872,15 +4866,9 @@ md_apply_fix (fixS *fixP, valueT *valP, segT seg ATTRIBUTE_UNUSED)
       /* The cast to offsetT below are necessary to make code
 	 correct for machines where ints are smaller than offsetT.  */
     case 1:
-      if (val<-128 || val>126) {
-        *buf++ = val|1;
-      }else{
-        *buf++ = val;
-      }
-      //upper_limit = 0x7f;
-      //lower_limit = - (offsetT) 0x80;
-      upper_limit = 254;		// APOLLO
-      lower_limit = - (offsetT) 254;
+      *buf++ = val;
+      upper_limit = 0x7f;
+      lower_limit = - (offsetT) 0x80;
       break;
     case 2:
       *buf++ = (val >> 8);
