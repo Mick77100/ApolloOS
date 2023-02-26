@@ -4,7 +4,7 @@ name: BuildApolloGCC-2
 
 # Controls when the action will run. 
 on:
-  # Triggers the workflow on push or pull request events but only for the master-new branch
+  # Triggers the workflow on push or pull request events for the ApolloGCC-2 branch
   push:
     branches: [ ApolloGCC-2 ]
     tags: 
