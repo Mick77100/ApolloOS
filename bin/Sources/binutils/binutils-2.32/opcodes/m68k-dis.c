@@ -658,8 +658,6 @@ print_insn_arg (const char *d,
   bfd_signed_vma disp;
   unsigned int uval;
 
-  bfd_signed_vma dispv=disp|1;
-
   switch (*d)
     {
     case 'c':		/* Cache identifier.  */
@@ -906,15 +904,6 @@ print_insn_arg (const char *d,
       (*info->fprintf_func) (info->stream, "#%d", val);
       break;
 
-    case '[':
-      if (place == 'b')
-	NEXTBYTE (p, disp);
-      else
-	return PRINT_INSN_ARG_INVALID_OP_TABLE;
-      
-      (*info->print_address_func) (addr + disp, info);
-      break;
-
     case 'B':
       if (place == 'b')
 	NEXTBYTE (p, disp);
@@ -922,10 +911,6 @@ print_insn_arg (const char *d,
 	disp = COERCE_SIGNED_CHAR (buffer[1]);
       else if (place == 'w' || place == 'W')
 	NEXTWORD (p, disp, PRINT_INSN_ARG_MEMORY_ERROR);
-      else if (place == '~' )
-	NEXTWORD (p, disp, PRINT_INSN_ARG_MEMORY_ERROR);
-      else if (place == 'v')
-	NEXTWORD (p, dispv, PRINT_INSN_ARG_MEMORY_ERROR);
       else if (place == 'l' || place == 'L' || place == 'C')
 	NEXTLONG (p, disp, PRINT_INSN_ARG_MEMORY_ERROR);
       else if (place == 'g')

@@ -42,8 +42,6 @@ const struct m68k_opcode m68k_opcodes[] =
 
 {"addib", 4,	one(0003000),	one(0177700), "#b$s", m68000up },
 {"addiw", 4,	one(0003100),	one(0177700), "#w$s", m68000up },
-{"addiwl",4,    one(0003300),   one(0177700), "#w$s", m68000up }, // 68080 APOLLO
-
 {"addil", 6,	one(0003200),	one(0177700), "#l$s", m68000up },
 {"addil", 6,	one(0003200),	one(0177700), "#lDs", mcfisa_a },
 
@@ -150,20 +148,20 @@ const struct m68k_opcode m68k_opcodes[] =
 {"bgtl", 2,	one(0067377),	one(0177777), "BL", m68020up | cpu32 | fido_a | mcfisa_b | mcfisa_c},
 {"blel", 2,	one(0067777),	one(0177777), "BL", m68020up | cpu32 | fido_a | mcfisa_b | mcfisa_c},
 
-{"bhis", 2,	one(0061000),	one(0177400), "B[", m68000up | mcfisa_a },
-{"blss", 2,	one(0061400),	one(0177400), "B[", m68000up | mcfisa_a },
-{"bccs", 2,	one(0062000),	one(0177400), "B[", m68000up | mcfisa_a },
-{"bcss", 2,	one(0062400),	one(0177400), "B[", m68000up | mcfisa_a },
-{"bnes", 2,	one(0063000),	one(0177400), "B[", m68000up | mcfisa_a },
-{"beqs", 2,	one(0063400),	one(0177400), "B[", m68000up | mcfisa_a },
-{"bvcs", 2,	one(0064000),	one(0177400), "B[", m68000up | mcfisa_a },
-{"bvss", 2,	one(0064400),	one(0177400), "B[", m68000up | mcfisa_a },
-{"bpls", 2,	one(0065000),	one(0177400), "B[", m68000up | mcfisa_a },
-{"bmis", 2,	one(0065400),	one(0177400), "B[", m68000up | mcfisa_a },
-{"bges", 2,	one(0066000),	one(0177400), "B[", m68000up | mcfisa_a },
-{"blts", 2,	one(0066400),	one(0177400), "B[", m68000up | mcfisa_a },
-{"bgts", 2,	one(0067000),	one(0177400), "B[", m68000up | mcfisa_a },
-{"bles", 2,	one(0067400),	one(0177400), "B[", m68000up | mcfisa_a },
+{"bhis", 2,	one(0061000),	one(0177400), "BB", m68000up | mcfisa_a },
+{"blss", 2,	one(0061400),	one(0177400), "BB", m68000up | mcfisa_a },
+{"bccs", 2,	one(0062000),	one(0177400), "BB", m68000up | mcfisa_a },
+{"bcss", 2,	one(0062400),	one(0177400), "BB", m68000up | mcfisa_a },
+{"bnes", 2,	one(0063000),	one(0177400), "BB", m68000up | mcfisa_a },
+{"beqs", 2,	one(0063400),	one(0177400), "BB", m68000up | mcfisa_a },
+{"bvcs", 2,	one(0064000),	one(0177400), "BB", m68000up | mcfisa_a },
+{"bvss", 2,	one(0064400),	one(0177400), "BB", m68000up | mcfisa_a },
+{"bpls", 2,	one(0065000),	one(0177400), "BB", m68000up | mcfisa_a },
+{"bmis", 2,	one(0065400),	one(0177400), "BB", m68000up | mcfisa_a },
+{"bges", 2,	one(0066000),	one(0177400), "BB", m68000up | mcfisa_a },
+{"blts", 2,	one(0066400),	one(0177400), "BB", m68000up | mcfisa_a },
+{"bgts", 2,	one(0067000),	one(0177400), "BB", m68000up | mcfisa_a },
+{"bles", 2,	one(0067400),	one(0177400), "BB", m68000up | mcfisa_a },
 
 {"jhi", 2,	one(0061000),	one(0177400), "Bg", m68000up | mcfisa_a },
 {"jls", 2,	one(0061400),	one(0177400), "Bg", m68000up | mcfisa_a },
@@ -271,8 +269,6 @@ const struct m68k_opcode m68k_opcodes[] =
 {"cmpib", 4,	one(0006000),	one(0177700), "#bDs", mcfisa_b | mcfisa_c },
 {"cmpiw", 4,	one(0006100),	one(0177700), "#w@s", m68000up },
 {"cmpiw", 4,	one(0006100),	one(0177700), "#wDs", mcfisa_b | mcfisa_c },
-{"cmpiwl",4,    one(0047000),   one(0177700), "#w@s", m68000up }, // 68080 APOLLO
-
 {"cmpil", 6,	one(0006200),	one(0177700), "#l@s", m68000up },
 {"cmpil", 6,	one(0006200),	one(0177700), "#lDs", mcfisa_a },
 
@@ -324,7 +320,7 @@ const struct m68k_opcode m68k_opcodes[] =
 {"dbcc", 2,	one(0052310),	one(0177770), "DsBw", m68000up },
 {"dbcs", 2,	one(0052710),	one(0177770), "DsBw", m68000up },
 {"dbeq", 2,	one(0053710),	one(0177770), "DsBw", m68000up },
-{"dbf",  2,	one(0050710),	one(0177770), "DsBw", m68000up },
+{"dbf", 2,	one(0050710),	one(0177770), "DsBw", m68000up },
 {"dbge", 2,	one(0056310),	one(0177770), "DsBw", m68000up },
 {"dbgt", 2,	one(0057310),	one(0177770), "DsBw", m68000up },
 {"dbhi", 2,	one(0051310),	one(0177770), "DsBw", m68000up },
@@ -334,28 +330,9 @@ const struct m68k_opcode m68k_opcodes[] =
 {"dbmi", 2,	one(0055710),	one(0177770), "DsBw", m68000up },
 {"dbne", 2,	one(0053310),	one(0177770), "DsBw", m68000up },
 {"dbpl", 2,	one(0055310),	one(0177770), "DsBw", m68000up },
-{"dbt",  2,	one(0050310),	one(0177770), "DsBw", m68000up },
+{"dbt", 2,	one(0050310),	one(0177770), "DsBw", m68000up },
 {"dbvc", 2,	one(0054310),	one(0177770), "DsBw", m68000up },
 {"dbvs", 2,	one(0054710),	one(0177770), "DsBw", m68000up },
-
-{"dbccl", 2,	one(0052310),	one(0177770), "DsB~", m68000up },  // APOLLO 68080 
-{"dbcsl", 2,	one(0052710),	one(0177770), "DsB~", m68000up },  // APOLLO 68080
-{"dbeql", 2,	one(0053710),	one(0177770), "DsB~", m68000up },  // APOLLO 68080
-{"dbfl",  2,	one(0050710),	one(0177770), "DsB~", m68000up },  // APOLLO 68080
-{"dbgel", 2,	one(0056310),	one(0177770), "DsB~", m68000up },  // APOLLO 68080
-{"dbgtl", 2,	one(0057310),	one(0177770), "DsB~", m68000up },  // APOLLO 68080
-{"dbhil", 2,	one(0051310),	one(0177770), "DsB~", m68000up },  // APOLLO 68080
-{"dblel", 2,	one(0057710),	one(0177770), "DsB~", m68000up },  // APOLLO 68080
-{"dblsl", 2,	one(0051710),	one(0177770), "DsB~", m68000up },  // APOLLO 68080
-{"dbltl", 2,	one(0056710),	one(0177770), "DsB~", m68000up },  // APOLLO 68080
-{"dbmil", 2,	one(0055710),	one(0177770), "DsB~", m68000up },  // APOLLO 68080
-{"dbnel", 2,	one(0053310),	one(0177770), "DsB~", m68000up },  // APOLLO 68080
-{"dbpll", 2,	one(0055310),	one(0177770), "DsB~", m68000up },  // APOLLO 68080
-{"dbtl",  2,	one(0050310),	one(0177770), "DsB~", m68000up },  // APOLLO 68080
-{"dbvcl", 2,	one(0054310),	one(0177770), "DsB~", m68000up },  // APOLLO 68080
-{"dbvsl", 2,	one(0054710),	one(0177770), "DsB~", m68000up },  // APOLLO 68080
-
-
 
 {"divsw", 2,	one(0100700),	one(0170700), ";wDd", m68000up | mcfhwdiv },
 
@@ -2347,7 +2324,6 @@ const struct m68k_opcode_alias m68k_opcode_aliases[] =
   { "dbhs",	"dbcc", },
   { "dbhsw",	"dbcc", },
   { "dbra",	"dbf", },
-  { "dbral",	"dbfl", },
   { "dbraw",	"dbf", },
   { "tdivsl",	"divsl", },
   { "divs",	"divsw", },
