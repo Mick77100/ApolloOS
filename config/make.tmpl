@@ -4094,7 +4094,7 @@ endif
 %(mmake)-archbase                        := %(package)-%(version)
 
 ifeq (%(compiler),host)
-    %(mmake)-portdir                     := $(HOSTDIR)/Ports/host/%(package)
+    %(mmake)-portdir                     := $(PORTSDIR)/%(package)
 else
     %(mmake)-portdir                     := $(PORTSDIR)/%(package)
 endif

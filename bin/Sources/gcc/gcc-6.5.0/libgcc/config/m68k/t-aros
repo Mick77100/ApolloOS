@@ -1,0 +1,4 @@
+
+aros-atomic.o: $(srcdir)/config/m68k/aros-atomic.c
+	$(gcc_compile) -mcpu=68020 -c $<
+libgcc-objects += aros-atomic.o

@@ -1,0 +1,2 @@
+# Custom multilibs for AROS
+M68K_MLIB_CPU += && match(MLIB, "^68")

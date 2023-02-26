@@ -1,0 +1,2 @@
+LIB1ASMFUNCS += _udivsi3 _divsi3 _umodsi3 _modsi3 _dvmd_tls
+

@@ -1,0 +1,29 @@
+# In AROS, "/usr" is a four-letter word.
+# Must match NATIVE_SYSTEM_HEADER_COMPONENT in aros.h !
+NATIVE_SYSTEM_HEADER_DIR = /include
+
+# Don't add AROS target include path when compiling host compiler
+CPPFLAGS =
+
+# Copy AROS specific include replacement files
+LIBGCC_DEPS += stmp-aros-hrds
+
+EXTRA_AROS_HEADERS = aros/types/size_t.h aros/types/ptrdiff_t.h \
+    aros/types/wchar_t.h aros/types/wint_t.h aros/types/null.h
+
+stmp-int-hdrs : | include/aros/types
+
+include/aros/types : $(addprefix $(srcdir)/ginclude/,$(EXTRA_AROS_HEADERS))
+	-if [ -d include ] ; then true; else mkdir include; chmod a+rx include; fi
+	-if [ -d include/aros/types ] ; \
+          then true; \
+	  else \
+	    mkdir include/aros; chmod a+rx include/aros; \
+	    mkdir include/aros/types; chmod a+rx include/aros/types; \
+	fi
+	for file in $(EXTRA_AROS_HEADERS); do \
+	  $(STAMP) include/$$file; \
+	  rm -fr include/$$file; \
+	  cp $(srcdir)/ginclude/$$file include/$$file; \
+	  chmod a+r include/$$file; \
+	done

@@ -1,4 +1,4 @@
-# Copyright © 1995-2020, The AROS Development Team. All rights reserved.
+# Copyright ï¿½ 1995-2020, The AROS Development Team. All rights reserved.
 # $Id$
 #
 # Static makefile rule file for AROS.
@@ -46,7 +46,7 @@ CROSSTOOLSDIR                 := @AROS_CROSSTOOLSDIR@
 
 # Files downloaded from the net are put here
 PORTSSOURCEDIR                := @AROS_PORTSSRCDIR@
-PORTSDIR                      := $(TARGETDIR)/Ports
+PORTSDIR                      := @AROS_PORTSSRCDIR@
 
 # Distributable Files we generate are put here
 DISTDIR                       := @AROS_BUILDDIR_UNIX@/distfiles
