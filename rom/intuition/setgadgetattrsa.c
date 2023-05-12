@@ -21,7 +21,7 @@
 #include <proto/intuition.h>
 #include <utility/tagitem.h>
 
-        AROS_LH4(IPTR, SetGadgetAttrsA,
+        AROS_LH4(IPTR, SetGadgetAttrsA,				/* IS AN ULONG IN AMIGA SOURCE */
 
 /*  SYNOPSIS */
         AROS_LHA(struct Gadget *,    gadget,    A0),

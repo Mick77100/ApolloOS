@@ -13,8 +13,8 @@ struct MoveWindowActionMsg
 {
     struct IntuiActionMsg    msg;
     struct Window   	    *window;
-    LONG    	    	     dx;
-    LONG    	    	     dy;
+    WORD    	    	     dx;
+    WORD    	    	     dy;
 };
 
 static VOID int_movewindow(struct MoveWindowActionMsg *msg,
@@ -30,8 +30,8 @@ static VOID int_movewindow(struct MoveWindowActionMsg *msg,
 
 /*  SYNOPSIS */
         AROS_LHA(struct Window *, window, A0),
-        AROS_LHA(LONG           , dx, D0),
-        AROS_LHA(LONG           , dy, D1),
+        AROS_LHA(WORD           , dx, D0),
+        AROS_LHA(WORD           , dy, D1),
 
 /*  LOCATION */
         struct IntuitionBase *, IntuitionBase, 28, Intuition)

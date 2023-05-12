@@ -12,7 +12,7 @@
 #include <proto/intuition.h>
 #include <proto/layers.h>
 
-        AROS_LH1(LONG, IsWindowVisible,
+        AROS_LH1(LONG, IsWindowVisible,				/* MUST BE A BOOL NOT LONG */
 
 /*  SYNOPSIS */
         AROS_LHA(struct Window *, window, A0),

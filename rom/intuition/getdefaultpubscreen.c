@@ -12,7 +12,7 @@
     NAME */
 #include <proto/intuition.h>
 
-        AROS_LH1(struct Screen *, GetDefaultPubScreen,
+        AROS_LH1(void Screen *, GetDefaultPubScreen,
 
 /*  SYNOPSIS */
         AROS_LHA(UBYTE *, nameBuffer, A0),
