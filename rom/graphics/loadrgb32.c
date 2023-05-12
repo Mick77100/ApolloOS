@@ -18,7 +18,7 @@
 
 /*  SYNOPSIS */
 	AROS_LHA(struct ViewPort *, vp, A0),
-	AROS_LHA(const ULONG     *, table, A1),
+	AROS_LHA(ULONG     *, table, A1),
 
 /*  LOCATION */
 	struct GfxBase *, GfxBase, 147, Graphics)
