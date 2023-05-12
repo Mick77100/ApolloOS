@@ -44,10 +44,10 @@ static ULONG rp8_render(APTR rp8r_data, WORD srcx, WORD srcy,
 
 /*  SYNOPSIS */
 	AROS_LHA(struct RastPort *	, rp		, A0),
-	AROS_LHA(UWORD             	, xstart	, D0),
-	AROS_LHA(UWORD             	, ystart	, D1),
-	AROS_LHA(UWORD             	, xstop		, D2),
-	AROS_LHA(UWORD             	, ystop		, D3),
+	AROS_LHA(WORD             	, xstart	, D0),
+	AROS_LHA(WORD             	, ystart	, D1),
+	AROS_LHA(WORD             	, xstop		, D2),
+	AROS_LHA(WORD             	, ystop		, D3),
 	AROS_LHA(UBYTE * 		, array		, A2),
 	AROS_LHA(struct RastPort *	, temprp	, A1),
 

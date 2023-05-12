@@ -19,7 +19,7 @@
 
 /*  SYNOPSIS */
 	AROS_LHA(struct RastPort *, rp, A1),
-	AROS_LHA(UBYTE            , pen, D0),
+	AROS_LHA(ULONG            , pen, D0),
 
 /*  LOCATION */
 	struct GfxBase *, GfxBase, 57, Graphics)

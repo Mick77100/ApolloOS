@@ -19,7 +19,7 @@
 
 /*  SYNOPSIS */
 	AROS_LHA(struct RastPort *, rp, A1),
-	AROS_LHA(UBYTE            , pen, D0),
+	AROS_LHA(ULONG            , pen, D0),
 
 /*  LOCATION */
 	struct GfxBase *, GfxBase, 39, Graphics)
@@ -31,7 +31,7 @@
     INPUTS
 
     rp   --  pointer to the RastPort in question
-    pen  --  pen number to set the bitmap pixels to 0 - 255
+    pen  --  pen number to set the bitmap pixels to
 
     RESULT
 
