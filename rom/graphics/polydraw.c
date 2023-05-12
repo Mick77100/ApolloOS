@@ -16,7 +16,7 @@
 
 /*  SYNOPSIS */
 	AROS_LHA(struct RastPort *, rp, A1),
-	AROS_LHA(LONG             , count, D0),
+	AROS_LHA(WORD             , count, D0),
 	AROS_LHA(WORD            *, polyTable, A0),
 
 /*  LOCATION */
@@ -53,10 +53,10 @@
 {
     AROS_LIBFUNC_INIT
 
-    UWORD i, cnt;
+    WORD i, cnt;
     WORD x, y;
 
-    cnt = (UWORD)count; /* see NOTES */
+    cnt = (WORD)count; /* see NOTES */
     for(i = 0; i < cnt; i++)
     {
     	x = *polyTable++;
