@@ -14,7 +14,7 @@
     NAME */
 #include <proto/dos.h>
 
-        AROS_LH0(ULONG, MaxCli,
+        AROS_LH0(LONG, MaxCli,
 
 /*  SYNOPSIS */
 

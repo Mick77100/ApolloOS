@@ -15,7 +15,7 @@
     NAME */
 #include <proto/dos.h>
 
-        AROS_LH0(SIPTR, IoErr,
+        AROS_LH0(LONG, IoErr,
 
 /*  SYNOPSIS */
 

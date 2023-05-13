@@ -16,11 +16,11 @@
     NAME */
 #include <proto/dos.h>
 
-        AROS_LH2(LONG, SetProtection,
+        AROS_LH2(BOOL, SetProtection,
 
 /*  SYNOPSIS */
         AROS_LHA(CONST_STRPTR, name,    D1),
-        AROS_LHA(ULONG,  protect, D2),
+        AROS_LHA(LONG,  protect, D2),
 
 /*  LOCATION */
         struct DosLibrary *, DOSBase, 31, Dos)

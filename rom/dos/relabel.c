@@ -14,7 +14,7 @@
     NAME */
 #include <proto/dos.h>
 
-        AROS_LH2(LONG, Relabel,
+        AROS_LH2(BOOL, Relabel,
 
 /*  SYNOPSIS */
         AROS_LHA(CONST_STRPTR, drive, D1),

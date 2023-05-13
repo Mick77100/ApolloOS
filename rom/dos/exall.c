@@ -22,7 +22,7 @@
 
 /*  SYNOPSIS */
         AROS_LHA(BPTR,                  lock,    D1),
-        AROS_LHA(struct ExAllData *,    buffer,  D2),
+        AROS_LHA(STRPTR,    buffer,  D2),
         AROS_LHA(LONG,                  size,    D3),
         AROS_LHA(LONG,                  data,    D4),
         AROS_LHA(struct ExAllControl *, control, D5),

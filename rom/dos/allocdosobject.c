@@ -19,7 +19,7 @@
     NAME */
 #include <proto/dos.h>
 
-        AROS_LH2(APTR, AllocDosObject,
+        AROS_LH2(void, AllocDosObject,
 
 /*  SYNOPSIS */
         AROS_LHA(ULONG                 , type, D1),

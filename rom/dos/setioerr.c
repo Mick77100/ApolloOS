@@ -15,10 +15,10 @@
     NAME */
 #include <proto/dos.h>
 
-        AROS_LH1(SIPTR, SetIoErr,
+        AROS_LH1(LONG, SetIoErr,
 
 /*  SYNOPSIS */
-        AROS_LHA(SIPTR, result, D1),
+        AROS_LHA(LONG, result, D1),
 
 /*  LOCATION */
         struct DosLibrary *, DOSBase, 77, Dos)

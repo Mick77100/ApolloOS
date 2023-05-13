@@ -114,7 +114,7 @@ static inline LONG is_question(BYTE * buff, LONG buffsize)
 
 /*  SYNOPSIS */
         AROS_LHA(CONST_STRPTR, template, D1),
-        AROS_LHA(SIPTR *, array, D2),
+        AROS_LHA(LONG *, array, D2),
         AROS_LHA(struct RDArgs *, rdargs, D3),
 
 /*  LOCATION */

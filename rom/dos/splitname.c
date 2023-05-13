@@ -25,13 +25,13 @@
     NAME */
 #include <proto/dos.h>
 
-        AROS_LH5(LONG, SplitName,
+        AROS_LH5(WORD, SplitName,
 
 /*  SYNOPSIS */
         AROS_LHA(CONST_STRPTR, name, D1),
-        AROS_LHA(ULONG , separator, D2),
+        AROS_LHA(UBYTE , separator, D2),
         AROS_LHA(STRPTR, buf, D3),
-        AROS_LHA(LONG  , oldpos, D4),
+        AROS_LHA(WORD  , oldpos, D4),
         AROS_LHA(LONG  , size, D5),
 
 /*  LOCATION */

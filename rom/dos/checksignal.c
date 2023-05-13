@@ -14,10 +14,10 @@
     NAME */
 #include <proto/dos.h>
 
-        AROS_LH1(LONG, CheckSignal,
+        AROS_LH1(ULONG, CheckSignal,
 
 /*  SYNOPSIS */
-        AROS_LHA(LONG, mask, D1),
+        AROS_LHA(ULONG, mask, D1),
 
 /*  LOCATION */
         struct DosLibrary *, DOSBase, 132, Dos)

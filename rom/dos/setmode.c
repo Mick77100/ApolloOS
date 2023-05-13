@@ -12,7 +12,7 @@
     NAME */
 #include <proto/dos.h>
 
-        AROS_LH2(LONG, SetMode,
+        AROS_LH2(BOOL, SetMode,
 
 /*  SYNOPSIS */
         AROS_LHA(BPTR, fh, D1),

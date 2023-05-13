@@ -13,7 +13,7 @@
     NAME */
 #include <proto/dos.h>
 
-        AROS_LH1(LONG, IsInteractive,
+        AROS_LH1(BOOL, IsInteractive,
 
 /*  SYNOPSIS */
         AROS_LHA(BPTR, file, D1),
@@ -51,7 +51,7 @@
     if (fh == NULL)
         return DOSFALSE;
 
-    return (LONG)fh->fh_Interactive; /* 100% identical to official ROM behavior */
+    return (BOOL)fh->fh_Interactive; /* 100% identical to official ROM behavior */
 
     AROS_LIBFUNC_EXIT
 } /* IsInteractive */

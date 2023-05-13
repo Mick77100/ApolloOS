@@ -54,7 +54,7 @@ static LONG internalBootCliHandler(void);
 #include <dos/dosextens.h>
 #include <proto/dos.h>
 
-        AROS_LH1(IPTR, CliInit,
+        AROS_LH1(LONG, CliInit,
 
 /*  SYNOPSIS */
         AROS_LHA(struct DosPacket *, dp, A0),

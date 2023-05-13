@@ -13,7 +13,7 @@
     NAME */
 #include <proto/dos.h>
 
-        AROS_LH1(LONG, RemDosEntry,
+        AROS_LH1(BOOL, RemDosEntry,
 
 /*  SYNOPSIS */
         AROS_LHA(struct DosList *, dlist, D1),

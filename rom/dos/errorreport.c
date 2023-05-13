@@ -27,7 +27,7 @@
 /*  SYNOPSIS */
         AROS_LHA(LONG            , code  , D1),
         AROS_LHA(LONG            , type  , D2),
-        AROS_LHA(IPTR            , arg1  , D3),
+        AROS_LHA(ULONG            , arg1  , D3),
         AROS_LHA(struct MsgPort *, device, D4),
 
 /*  LOCATION */
@@ -168,7 +168,7 @@
     switch (type) {
         /* a filehandle */
         case REPORT_STREAM:
-            if (arg1 == (IPTR)NULL)
+            if (arg1 == (ULONG)NULL)
                 return DOSTRUE;
             msgport = ((struct FileHandle *) BADDR(arg1))->fh_Type;
             dl = (struct DeviceList*)BADDR(dopacket1(DOSBase, NULL, msgport, ACTION_CURRENT_VOLUME, ((struct FileHandle *) BADDR(arg1))->fh_Arg1));
@@ -187,7 +187,7 @@
             if (!fib)
                 return DOSTRUE;
             /* if they provided a lock, just use it */
-            if (arg1 != (IPTR)NULL) {
+            if (arg1 != (ULONG)NULL) {
                 msgport = ((struct FileLock *) BADDR(arg1))->fl_Task;
             } else {
                 msgport = device;
@@ -206,7 +206,7 @@
 
         /* a volume, ie a DeviceList */
         case REPORT_VOLUME:
-            if (arg1 == (IPTR)NULL)
+            if (arg1 == (ULONG)NULL)
                 return DOSTRUE;
 
             dl = (struct DeviceList *) arg1;
@@ -216,7 +216,7 @@
             
         /* raw volume name */
         case REPORT_INSERT:
-            if (arg1 == (IPTR)NULL)
+            if (arg1 == (ULONG)NULL)
                 return DOSTRUE;
             if (!getpacketinfo(DOSBase, (STRPTR)arg1, &phs))
                 return DOSTRUE;

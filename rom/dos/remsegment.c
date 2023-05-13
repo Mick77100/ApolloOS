@@ -16,7 +16,7 @@
 #include <dos/dosextens.h>
 #include <proto/dos.h>
 
-        AROS_LH1(LONG, RemSegment,
+        AROS_LH1(BOOL, RemSegment,
 
 /*  SYNOPSIS */
         AROS_LHA(struct Segment *, seg, D1),

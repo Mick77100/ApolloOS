@@ -21,7 +21,7 @@ struct ReadLinkDeviceUnit
     NAME */
 #include <proto/dos.h>
 
-        AROS_LH5(LONG, ReadLink,
+        AROS_LH5(BOOL, ReadLink,
 
 /*  SYNOPSIS */
         AROS_LHA(struct MsgPort *, port, D1),

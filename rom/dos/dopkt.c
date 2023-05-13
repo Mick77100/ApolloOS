@@ -15,16 +15,16 @@
     NAME */
 #include <proto/dos.h>
 
-        AROS_LH7I(SIPTR, DoPkt,
+        AROS_LH7I(LONG, DoPkt,
 
 /*  SYNOPSIS */
         AROS_LHA(struct MsgPort *, port, D1),
         AROS_LHA(LONG            , action, D2),
-        AROS_LHA(SIPTR           , arg1, D3),
-        AROS_LHA(SIPTR           , arg2, D4),
-        AROS_LHA(SIPTR           , arg3, D5),
-        AROS_LHA(SIPTR           , arg4, D6),
-        AROS_LHA(SIPTR           , arg5, D7),
+        AROS_LHA(LONG           , arg1, D3),
+        AROS_LHA(LONG           , arg2, D4),
+        AROS_LHA(LONG           , arg3, D5),
+        AROS_LHA(LONG           , arg4, D6),
+        AROS_LHA(LONG           , arg5, D7),
 
 /*  LOCATION */
         struct DosLibrary *, DOSBase, 40, Dos)
@@ -63,9 +63,9 @@
  * All Amiga kickstart versions accept most dos packet dos calls without dosbase in A6.
  * So we have this internal routine here for compatibility purposes.
  */
-SIPTR dopacket(SIPTR *res2, struct MsgPort *port, LONG action, SIPTR arg1, SIPTR arg2, SIPTR arg3, SIPTR arg4, SIPTR arg5, SIPTR arg6, SIPTR arg7)
+LONG dopacket(LONG *res2, struct MsgPort *port, LONG action, LONG arg1, LONG arg2, LONG arg3, LONG arg4, LONG arg5, LONG arg6, LONG arg7)
 {
-    SIPTR res;
+    LONG res;
     struct Process   *me = (struct Process *)FindTask(NULL);
     struct DosPacket *dp;
     struct MsgPort   *replyPort;

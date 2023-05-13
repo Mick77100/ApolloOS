@@ -17,7 +17,7 @@
 #include <exec/types.h>
 #include <proto/dos.h>
 
-        AROS_LH2(LONG, Rename,
+        AROS_LH2(BOOL, Rename,
 
 /*  SYNOPSIS */
         AROS_LHA(CONST_STRPTR, oldName, D1),
