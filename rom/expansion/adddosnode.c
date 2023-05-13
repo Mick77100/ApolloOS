@@ -21,7 +21,7 @@
 	AROS_LH3(BOOL, AddDosNode,
 
 /*  SYNOPSIS */
-	AROS_LHA(LONG               , bootPri, D0),
+	AROS_LHA(BYTE               , bootPri, D0),
 	AROS_LHA(ULONG              , flags, D1),
 	AROS_LHA(struct DeviceNode *, deviceNode, A0),
 
