@@ -21,7 +21,7 @@
 
 /*  SYNOPSIS */
 	AROS_LHA(APTR,    address, A0),
-	AROS_LHA(ULONG *, length,  A1),
+	AROS_LHA(LONG *, length,  A1),
 	AROS_LHA(ULONG,   flags,  D0),
 
 /*  LOCATION */

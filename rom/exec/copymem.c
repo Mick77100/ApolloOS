@@ -17,7 +17,7 @@
 /*  SYNOPSIS */
         AROS_LHA(CONST_APTR,  source, A0),
         AROS_LHA(APTR,  dest,   A1),
-        AROS_LHA(IPTR,  size,   D0),
+        AROS_LHA(ULONG,  size,   D0),
 
 /*  LOCATION */
         struct ExecBase *, SysBase, 104, Exec)

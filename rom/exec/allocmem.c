@@ -39,10 +39,10 @@
 
     NAME */
 
-        AROS_LH2(APTR, AllocMem,
+        AROS_LH2(void, AllocMem,
 
 /*  SYNOPSIS */
-        AROS_LHA(IPTR,  byteSize,     D0),
+        AROS_LHA(ULONG,  byteSize,     D0),
         AROS_LHA(ULONG, requirements, D1),
 
 /* LOCATION */
@@ -80,7 +80,7 @@
     
     APTR res = NULL;
     struct checkMemHandlersState cmhs;
-    IPTR origSize = byteSize;
+    ULONG origSize = byteSize;
     struct TraceLocation loc = CURRENT_LOCATION("AllocMem");
 
     D(

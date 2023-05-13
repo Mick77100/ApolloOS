@@ -15,7 +15,7 @@
 	AROS_LH1(LONG, AllocTrap,
 
 /*  SYNOPSIS */
-	AROS_LHA(long, trapNum, D0),
+	AROS_LHA(LONG, trapNum, D0),
 
 /*  LOCATION */
 	struct ExecBase *, SysBase, 57, Exec)

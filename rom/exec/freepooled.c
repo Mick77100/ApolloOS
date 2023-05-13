@@ -22,9 +22,9 @@
         AROS_LH3(void,FreePooled,
 
 /*  SYNOPSIS */
-        AROS_LHA(APTR, poolHeader,A0),
-        AROS_LHA(APTR, memory,    A1),
-        AROS_LHA(IPTR, memSize,   D0),
+        AROS_LHA(void *, poolHeader,A0),
+        AROS_LHA(void *, memory,    A1),
+        AROS_LHA(ULONG, memSize,   D0),
 
 /* LOCATION */
         struct ExecBase *, SysBase, 119, Exec)

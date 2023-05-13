@@ -15,7 +15,7 @@
     NAME */
 #include <proto/exec.h>
 
-	AROS_LH1(IPTR, Supervisor,
+	AROS_LH1(ULONG, Supervisor,
 
 /*  SYNOPSIS */
 	AROS_LHA(void *, userFunction, A5),

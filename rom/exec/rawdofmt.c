@@ -414,12 +414,12 @@ APTR InternalRawDoFmt(CONST_STRPTR FormatString, APTR DataStream, VOID_FUNC PutC
 
     NAME */
 
-	AROS_LH4I(RAWARG,RawDoFmt,
+	AROS_LH4I(RAWARG,RawDoFmt,						/* APTR on amiga source */
 
 /*  SYNOPSIS */
 	AROS_LHA(CONST_STRPTR, FormatString, A0),
-	AROS_LHA(RAWARG,       DataStream,   A1),
-	AROS_LHA(VOID_FUNC,    PutChProc,    A2),
+	AROS_LHA(RAWARG,       DataStream,   A1),		/* APTR on amiga source */
+	AROS_LHA(VOID_FUNC,    PutChProc,    A2),		/* void (*) on amiga source */
 	AROS_LHA(APTR,         PutChData,    A3),
 
 /*  LOCATION */

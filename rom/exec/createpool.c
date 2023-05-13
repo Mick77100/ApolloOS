@@ -22,12 +22,12 @@
 #include <exec/memheaderext.h>
 #include <proto/exec.h>
 
-        AROS_LH3(APTR, CreatePool,
+        AROS_LH3(void, CreatePool,
 
 /*  SYNOPSIS */
         AROS_LHA(ULONG, requirements, D0),
-        AROS_LHA(IPTR, puddleSize,   D1),
-        AROS_LHA(IPTR, threshSize,   D2),
+        AROS_LHA(ULONG, puddleSize,   D1),
+        AROS_LHA(ULONG, threshSize,   D2),
 
 /*  LOCATION */
         struct ExecBase *, SysBase, 116, Exec)

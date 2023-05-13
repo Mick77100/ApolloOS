@@ -17,7 +17,7 @@
 	AROS_LH1(struct Library *, OldOpenLibrary,
 
 /*  SYNOPSIS */
-	AROS_LHA(UBYTE *, libName, A1),
+	AROS_LHA(APTR, libName, A1),
 
 /*  LOCATION */
 	struct ExecBase *, SysBase, 68, Exec)

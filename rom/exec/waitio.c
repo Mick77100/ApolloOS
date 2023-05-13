@@ -14,7 +14,7 @@
 
     NAME */
 
-	AROS_LH1(LONG, WaitIO,
+	AROS_LH1(BYTE, WaitIO,
 
 /*  SYNOPSIS */
 	AROS_LHA(struct IORequest *, iORequest, A1),

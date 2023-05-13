@@ -19,7 +19,7 @@
 	AROS_LH1(void, FreeSignal,
 
 /*  SYNOPSIS */
-	AROS_LHA(LONG, signalNum, D0),
+	AROS_LHA(BYTE, signalNum, D0),
 
 /*  LOCATION */
 	struct ExecBase *, SysBase, 56, Exec)

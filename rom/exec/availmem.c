@@ -23,7 +23,7 @@
 
     NAME */
 
-        AROS_LH1(IPTR, AvailMem,
+        AROS_LH1(ULONG, AvailMem,
 
 /*  SYNOPSIS */
         AROS_LHA(ULONG, attributes, D1),

@@ -26,7 +26,7 @@
 /*  SYNOPSIS */
         AROS_LHA(struct MemHeader *, freeList,    A0),
         AROS_LHA(APTR,               memoryBlock, A1),
-        AROS_LHA(IPTR,               byteSize,    D0),
+        AROS_LHA(ULONG,               byteSize,    D0),
 
 /*  LOCATION */
     struct ExecBase *, SysBase, 32, Exec)

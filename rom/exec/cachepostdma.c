@@ -18,11 +18,11 @@
     NAME */
 #include <proto/exec.h>
 
-	AROS_NTLH3(void, CachePostDMA,
+	AROS_NTLH3(APTR, CachePostDMA,
 
 /*  SYNOPSIS */
 	AROS_LHA(APTR,    address, A0),
-	AROS_LHA(ULONG *, length,  A1),
+	AROS_LHA(LONG *, length,  A1),
 	AROS_LHA(ULONG,   flags,  D0),
 
 /*  LOCATION */

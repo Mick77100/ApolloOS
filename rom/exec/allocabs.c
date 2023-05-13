@@ -22,10 +22,10 @@
 
     NAME */
 
-        AROS_LH2(APTR, AllocAbs,
+        AROS_LH2(void, AllocAbs,
 
 /*  SYNOPSIS */
-        AROS_LHA(IPTR,  byteSize, D0),
+        AROS_LHA(ULONG,  byteSize, D0),
         AROS_LHA(APTR,  location, A1),
 
 /*  LOCATION */
@@ -67,7 +67,7 @@
 {
     AROS_LIBFUNC_INIT
 
-    IPTR origSize = byteSize;
+    ULONG origSize = byteSize;
     APTR ret = NULL;
     struct TraceLocation tp = CURRENT_LOCATION("AllocAbs");
 
