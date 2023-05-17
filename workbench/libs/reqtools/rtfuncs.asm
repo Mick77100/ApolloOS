@@ -627,11 +627,9 @@ rtUnLockWindow:
 	moveq	#0,d1
 	move.b	rtwl_PtrWidth(a1),d1
 	move.b	rtwl_XOffset(a1),d2
-	ext.w	d2
-	ext.l	d2
+	extb.l	d2
 	move.b	rtwl_YOffset(a1),d3
-	ext.w	d3
-	ext.l	d3
+	extb.l	d3
 	move.l	rtwl_Pointer(a1),a1
 	jsr	_LVOSetPointer(a6)
 	bra.b	endreq
