@@ -515,8 +515,7 @@ BCPL doIO           /*  54, LONG, @IORequest */
     lsl.l	#2,%d1
     move.l	%d1,%a1
     jsr		%a6@(76 * -6)	/* Exec/DoIO() */
-    ext.w	%d0
-    ext.l	%d0
+    extb.l	%d0
     movem.l	%sp@+,%a0-%a1/%a6
     BRTS
 
