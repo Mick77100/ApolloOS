@@ -149,7 +149,7 @@ struct Process
     BPTR	    pr_StackBase;
       /* Secondary return-value, as defined in <dos/dos.h>. As of now this
          field is declared PRIVATE. Use IoErr()/SetIoErr() to access it. */
-    SIPTR	    pr_Result2;
+    LONG	    pr_Result2;
       /* Lock of the current directory. As of now this is declared READ-ONLY.
          Use CurrentDir() to set it. (struct FileLock *) */
     BPTR	    pr_CurrentDir;
@@ -177,9 +177,9 @@ struct Process
       /* Code that is called, when the process exits. pr_ExitData takes an
          argument to be passed to this code. */
     void   (* pr_ExitCode)();
-    IPTR      pr_ExitData;
+    LONG      pr_ExitData;
       /* Arguments passed to the process from caller. */
-    STRPTR    pr_Arguments;
+    UBYTE    *pr_Arguments;
 
       /* List of local environment variables. This list should be in
          alphabetical order. Multiple entries may have the same name, if they
@@ -395,7 +395,7 @@ struct DosList
             BSTR    dol_Handler;
             LONG    dol_StackSize;
             LONG    dol_Priority;
-            BPTR    dol_Startup;
+            ULONG   dol_Startup;
             BPTR    dol_SegList;
             BPTR    dol_GlobVec;
         } dol_handler;
@@ -447,7 +447,7 @@ struct DeviceList
     BPTR             dl_LockList;	/* (void *) List of all locks on the volume.	       */
     LONG             dl_DiskType;	/* Type of the disk. (see <dos/dos.h> for definitions) */
 					/* ULONG padding is inserted here on 64 bits	       */
-    BPTR             dl_unused;		/* PRIVATE					       */
+    LONG             dl_unused;		/* PRIVATE					       */
 
     BSTR dl_Name;
 };
@@ -459,13 +459,13 @@ struct DevInfo
 {
     BPTR             dvi_Next;
     LONG             dvi_Type;       /* see above, always = DLT_DEVICE */
-    struct MsgPort * dvi_Task;
+    APTR			 dvi_Task;
     BPTR             dvi_Lock;
 
     BSTR             dvi_Handler;    /* Device name for handler.	  */
     LONG             dvi_StackSize;  /* Packet-handler initial stack size */
     LONG             dvi_Priority;   /* Packet-handler initial priority	  */
-    BPTR             dvi_Startup;    /* (struct FileSysStartupMsg *)	  */
+    LONG             dvi_Startup;    /* (struct FileSysStartupMsg *)	  */
     BPTR             dvi_SegList;    /* SegList for the handler		  */
     BPTR             dvi_GlobVec;    /* Global Vector, should be (BPTR)-1 */
 #define dvi_GlobalVec dvi_GlobVec

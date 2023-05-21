@@ -28,10 +28,10 @@
 
 struct NotifyRequest
 {
-    STRPTR  nr_Name;     /* Name of the watched file. */
-    STRPTR  nr_FullName; /* Fully qualified name of the watched file. This is
+    UBYTE  nr_Name;     /* Name of the watched file. */
+    UBYTE  nr_FullName; /* Fully qualified name of the watched file. This is
                             READ-ONLY! */
-    IPTR    nr_UserData; /* Fill in with your own data. */
+    ULONG    nr_UserData; /* Fill in with your own data. */
     ULONG   nr_Flags;    /* see below */
 
     /*
@@ -53,7 +53,7 @@ struct NotifyRequest
         } nr_Signal;
     } nr_stuff;
 
-    IPTR             nr_Reserved[4]; /* PRIVATE! Set to 0 for now. */
+    ULONG             nr_Reserved[4]; /* PRIVATE! Set to 0 for now. */
 
     ULONG            nr_MsgCount; /* Number of unreplied messages. */
 
@@ -98,8 +98,8 @@ struct NotifyMessage
     struct NotifyRequest * nm_NReq;
 
     /* The following two fields are for PRIVATE use by handlers. */
-    IPTR nm_DoNotTouch;
-    IPTR nm_DoNotTouch2;
+    ULONG nm_DoNotTouch;
+    ULONG nm_DoNotTouch2;
 };
 
 /* nm_Class. Do not use, yet. */

@@ -43,7 +43,7 @@ struct RDArgs
          Input() as source. */
     struct CSource RDA_Source;
 
-    IPTR RDA_DAList; /* PRIVATE. Must be initialized to 0. */
+    LONG RDA_DAList; /* PRIVATE. Must be initialized to 0. */
 
     /* The next two fields allow an application to supply a buffer in which
        ReadArgs() will store parsed data. If either of these fields is 0,
