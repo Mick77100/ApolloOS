@@ -25,7 +25,7 @@ struct FileSysEntry
     ULONG       fse_Version;
     ULONG       fse_PatchFlags;
     ULONG       fse_Type;
-    IPTR        fse_Task;
+    CPTR        fse_Task;
     BPTR        fse_Lock;
     BSTR        fse_Handler;
     ULONG       fse_StackSize;
