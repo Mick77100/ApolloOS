@@ -177,7 +177,7 @@ union CDTOC {
 
 struct CDXL {
     struct MinNode      Node;
-    BYTE               *Buffer;
+    CHAR               *Buffer;
     LONG                Length;
     LONG                Actual;
     APTR                IntData;        /* 'data' parameter */

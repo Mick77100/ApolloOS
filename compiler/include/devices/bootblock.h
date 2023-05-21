@@ -15,7 +15,7 @@
 
 struct BootBlock
 {
-    UBYTE   bb_id[4];
+    STRUCT   bb_id[4];
     LONG    bb_chksum;
     LONG    bb_dosblock;
 };

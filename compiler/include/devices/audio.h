@@ -46,7 +46,7 @@ struct IOAudio
 {
     struct IORequest 	 ioa_Request;
     WORD    	    	 ioa_AllocKey;
-    UBYTE   	    	*ioa_Data;
+    APTR   	    	*ioa_Data;
     ULONG   	    	 ioa_Length;
     UWORD   	    	 ioa_Period;
     UWORD   	    	 ioa_Volume;

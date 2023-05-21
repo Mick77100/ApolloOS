@@ -26,11 +26,11 @@ struct KeyMapResource
 struct KeyMap
 {
     CONST UBYTE * km_LoKeyMapTypes;
-    CONST IPTR  * km_LoKeyMap;
+    CONST ULONG  * km_LoKeyMap;
     CONST UBYTE * km_LoCapsable;
     CONST UBYTE * km_LoRepeatable;
     CONST UBYTE * km_HiKeyMapTypes;
-    CONST IPTR  * km_HiKeyMap;
+    CONST ULONG  * km_HiKeyMap;
     CONST UBYTE * km_HiCapsable;
     CONST UBYTE * km_HiRepeatable;
 };
