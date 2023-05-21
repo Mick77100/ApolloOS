@@ -45,21 +45,21 @@ BPTR SelectErrorOutput(BPTR fh);
 
 /* Exec support */
 VOID BeginIO (struct IORequest *ioReq);
-struct IORequest * CreateExtIO (struct MsgPort * port, ULONG iosize);
-struct IOStdReq * CreateStdIO (struct MsgPort * port);
+struct IORequest * CreateExtIO (const struct MsgPort * port, LONG iosize);
+struct IOStdReq * CreateStdIO (const struct MsgPort * port);
 void DeleteExtIO (struct IORequest * ioreq);
 void DeleteStdIO (struct IOStdReq * ioreq);
-struct Task * CreateTask (STRPTR name, LONG pri, APTR initpc, ULONG stacksize);
+struct Task * CreateTask (CONST_STRPTR name, LONG pri, CONST APTR initpc, ULONG stacksize);
 void DeleteTask (struct Task * task);
-void NewList (struct List *);
+void NewList (struct List * list);
 #if !defined(ENABLE_RT) || !ENABLE_RT
-struct MsgPort * CreatePort (STRPTR name, LONG pri);
-void DeletePort (struct MsgPort * mp);
+struct MsgPort * CreatePort (CONST_STRPTR name, LONG pri);
+void DeletePort (struct MsgPort * ioreq);
 #endif
 
 /* Extra */
 extern ULONG RangeSeed;
-ULONG RangeRand (ULONG maxValue);
+UWORD RangeRand (ULONG maxValue);
 ULONG FastRand (ULONG seed);
 LONG TimeDelay (LONG unit, ULONG secs, ULONG microsecs);
 void waitbeam (LONG pos);
@@ -69,14 +69,14 @@ STRPTR StrDup(CONST_STRPTR str);
 void MergeSortList(struct MinList *l, int (*compare)(struct MinNode *n1, struct MinNode *n2, void *data), void *data);
 
 /* Commodities */
-CxObj  *HotKey (STRPTR description, struct MsgPort *port, LONG id);
+CxObj  *HotKey (CONST_STRPTR description, struct MsgPort *port, LONG id);
 VOID    FreeIEvents (struct InputEvent *events);
-UBYTE **ArgArrayInit(ULONG argc, UBYTE **argv);
+STRPTR *ArgArrayInit(LONG argc, CONST_STRPTR *argv);
 VOID    ArgArrayDone(VOID);
-LONG    ArgInt(UBYTE **tt, STRPTR entry, LONG defaultVal);
-STRPTR  ArgString(UBYTE **tt, STRPTR entry, STRPTR defaultstring);
-struct  InputEvent *InvertString(STRPTR str, struct KeyMap *km);
-struct  InputEvent *InvertStringForwd(STRPTR str, struct KeyMap *km);
+LONG    ArgInt(CONST_STRPTR *tt, CONST_STRPTR entry, LONG defaultVal);
+STRPTR  ArgString(CONST_STRPTR *tt, CONST_STRPTR entry, CONST_STRPTR defaultstring);
+struct  InputEvent *InvertString(CONST_STRPTR str, const struct KeyMap *km);
+struct  InputEvent *InvertStringForwd(CONST_STRPTR str, const struct KeyMap *km);
 
 /* Graphics */
 #ifndef ObtainBestPen
@@ -97,15 +97,15 @@ void SetWindowPointer( struct Window * window, ULONG tag1, ...) __stackparm;
 #endif
 
 /* BOOPSI */
-IPTR DoMethodA (Object * obj, Msg message);
-IPTR DoMethod (Object * obj, STACKULONG MethodID, ...) __stackparm;
-IPTR DoSuperMethodA (Class * cl, Object * obj, Msg message);
-IPTR DoSuperMethod (Class * cl, Object * obj, STACKULONG MethodID, ...) __stackparm;
-IPTR CoerceMethodA (Class * cl, Object * obj, Msg message);
-IPTR CoerceMethod (Class * cl, Object * obj, STACKULONG MethodID, ...) __stackparm;
+ULONG DoMethodA (Object * obj, Msg message);
+ULONG DoMethod (Object * obj, STACKULONG MethodID, ...) __stackparm;
+ULONG DoSuperMethodA (Class * cl, Object * obj, Msg message);
+ULONG DoSuperMethod (Class * cl, Object * obj, STACKULONG MethodID, ...) __stackparm;
+ULONG CoerceMethodA (Class * cl, Object * obj, Msg message);
+ULONG CoerceMethod (Class * cl, Object * obj, STACKULONG MethodID, ...) __stackparm;
 IPTR DoSuperNewTagList(Class *CLASS, Object *object, struct GadgetInfo *gadgetInfo, struct TagItem *tags);
 IPTR DoSuperNewTags(Class *CLASS, Object *object, struct GadgetInfo *gadgetInfo, Tag tag1, ...) __stackparm;
-IPTR SetSuperAttrs (Class * cl, Object * obj, Tag tag1, ...) __stackparm;
+ULONG SetSuperAttrs (Class * cl, Object * obj, Tag tag1, ...) __stackparm;
 
 /* Locale */
 #ifndef OpenCatalog
@@ -299,9 +299,9 @@ void GetDataStreamFromFormat(CONST_STRPTR format, va_list args,
 
 
 /* Rexx support */
-BOOL CheckRexxMsg(struct RexxMsg *);
-LONG SetRexxVar(struct RexxMsg *, CONST_STRPTR var, char *value, ULONG length);
-LONG GetRexxVar(struct RexxMsg *, CONST_STRPTR var, char **value);
+BOOL CheckRexxMsg(const struct RexxMsg *rexxmsg);
+LONG SetRexxVar(struct RexxMsg *rexxmsg, CONST_STRPTR var, CONST_STRPTR value, LONG length);
+LONG GetRexxVar(const struct RexxMsg *rexxmsg, CONST_STRPTR var, STRPTR *value);
 
 /* Inline versions of varargs functions */
 #if !defined(ALIB_NO_INLINE_STDARG) && !defined(NO_INLINE_STDARG)
