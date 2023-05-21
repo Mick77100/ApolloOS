@@ -13,7 +13,7 @@
 #include "cia_intern.h"
 
 AROS_LH2(struct Interrupt *, AddICRVector,
-	 AROS_LHA(LONG, iCRBit, D0),
+	 AROS_LHA(WORD, iCRBit, D0),
 	 AROS_LHA(struct Interrupt *, interrupt, A1),
 	 struct Library *, resource, 1, Cia)
 {
