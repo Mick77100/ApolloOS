@@ -56,7 +56,7 @@ struct DiskFontHeader
 	struct Node dfh_DF;
 	UWORD	dfh_FileID;
 	UWORD	dfh_Revision;
-	BPTR	dfh_Segment;
+	LONG	dfh_Segment;
 	char	dfh_Name[MAXFONTNAME];
 	struct TextFont dfh_TF;
 };
