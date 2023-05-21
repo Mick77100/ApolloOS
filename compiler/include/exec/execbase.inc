@@ -31,13 +31,13 @@ struct ExecBase
 /* System Constants */
     UWORD SoftVer;      /* OBSOLETE */
     WORD  LowMemChkSum;
-    IPTR  ChkBase;
+    ULONG  ChkBase;
     APTR  ColdCapture;
     APTR  CoolCapture;
     APTR  WarmCapture;
     APTR  SysStkUpper;  /* System Stack Bounds */
     APTR  SysStkLower;
-    IPTR  MaxLocMem;    /* Top address of Chip memory + 1, or Chip RAM size. Amiga-specific */
+    ULONG  MaxLocMem;    /* Top address of Chip memory + 1, or Chip RAM size. Amiga-specific */
     APTR  DebugEntry;
     APTR  DebugData;
     APTR  AlertData;
@@ -90,14 +90,14 @@ struct ExecBase
 
 /* Miscellaneous Stuff */
     UWORD          ex_Pad0;            /* PRIVATE */
-    IPTR           ex_LaunchPoint;     /* PRIVATE */
+    ULONG           ex_LaunchPoint;     /* PRIVATE */
     APTR           ex_RamLibPrivate;
     ULONG          ex_EClockFrequency; /* (readable) */
     ULONG          ex_CacheControl;    /* PRIVATE */
     ULONG          ex_TaskID;
-    IPTR           ex_Reserved1[5];
+    ULONG           ex_Reserved1[5];
     APTR           ex_MMULock;         /* PRIVATE */
-    IPTR           ex_Reserved2[2];
+    ULONG           ex_Reserved2[3];
     ULONG          ex_DebugFlags;
     struct MinList ex_MemHandlers;
     APTR           ex_MemHandler;      /* PRIVATE */

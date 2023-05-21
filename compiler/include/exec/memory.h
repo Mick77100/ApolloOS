@@ -20,13 +20,13 @@ struct MemHeader
     struct MemChunk * mh_First;
     APTR              mh_Lower;
     APTR              mh_Upper;
-    IPTR              mh_Free;
+    ULONG              mh_Free;
 };
 
 struct MemChunk
 {
     struct MemChunk *mc_Next;
-    IPTR             mc_Bytes;
+    ULONG             mc_Bytes;
 };
 
 /* Total size of struct MemChunk, including padding */
@@ -41,7 +41,7 @@ struct MemEntry
         ULONG meu_Reqs;
         APTR  meu_Addr;
     } me_Un;
-    IPTR me_Length;
+    ULONG me_Length;
 };
 #define me_Reqs me_Un.meu_Reqs
 #define me_Addr me_Un.meu_Addr
@@ -107,7 +107,7 @@ struct MemList
 
 struct MemHandlerData
 {
-    IPTR  memh_RequestSize;
+    ULONG  memh_RequestSize;
     ULONG memh_RequestFlags;
     ULONG memh_Flags;
 };
