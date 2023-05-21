@@ -241,7 +241,7 @@ struct Gadget
     APTR	       SelectRender;
     struct IntuiText * GadgetText;
 
-    IPTR MutualExclude; /* OBSOLETE */
+    LONG MutualExclude; /* OBSOLETE */
 
     APTR  SpecialInfo;
     UWORD GadgetID;
@@ -265,7 +265,7 @@ struct ExtGadget
     APTR	       SelectRender;
     struct IntuiText * GadgetText;
 
-    IPTR MutualExclude; /* OBSOLETE */
+    LONG MutualExclude; /* OBSOLETE */
 
     APTR  SpecialInfo;
     UWORD GadgetID;

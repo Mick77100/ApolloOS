@@ -20,7 +20,7 @@ struct StringExtend
     UBYTE	ActivePens[2];
     ULONG	InitialModes;
     struct Hook *EditHook;
-    STRPTR	WorkBuffer;
+    UBYTE	WorkBuffer;
     ULONG	Reserved[4];
 };
 
@@ -28,8 +28,8 @@ struct SGWork
 {
     struct Gadget	*Gadget;
     struct StringInfo	*StringInfo;
-    STRPTR		WorkBuffer;
-    STRPTR		PrevBuffer;
+    UBYTE		WorkBuffer;
+    UBYTE		PrevBuffer;
     ULONG		Modes;
     struct InputEvent	*IEvent;
     UWORD		Code;
