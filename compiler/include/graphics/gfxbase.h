@@ -88,14 +88,14 @@ struct GfxBase
     UBYTE   crb_reserved[4];
     UWORD   monitor_id;
 
-    IPTR  hedley[8];
-    IPTR  hedley_sprites[8];
-    IPTR  hedley_sprites1[8];
+    ULONG  hedley[8];
+    ULONG  hedley_sprites[8];
+    ULONG  hedley_sprites1[8];
     WORD  hedley_count;
     UWORD hedley_flags;
     WORD  hedley_tmp;
 
-    IPTR * hash_table;					/* Hashtable used for GfxAssociate() and GfxLookup() (private!) */
+    LONG * hash_table;					/* Hashtable used for GfxAssociate() and GfxLookup() (private!) */
     UWORD  current_tot_rows;
     UWORD  current_tot_cclks;
     UBYTE  hedley_hint;
@@ -114,10 +114,10 @@ struct GfxBase
     UWORD                    TopLine;
     struct SignalSemaphore * ActiViewCprSemaphore;	/* Semaphore for active view access	  */
 
-    struct Library  *UtilBase;				/* Library Bases */
-    struct ExecBase *ExecBase;
+    ULONG  *UtilBase;				/* Library Bases */
+    ULONG *ExecBase;
 
-    BYTE  * bwshifts;
+    UBYTE  * bwshifts;
     UWORD * StrtFetchMasks;
     UWORD * StopFetchMasks;
     UWORD * Overrun;
