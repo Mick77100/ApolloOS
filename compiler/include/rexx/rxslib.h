@@ -32,21 +32,21 @@ struct RxsLib
 	struct Library     rl_Node;
 	UBYTE              rl_Flags;
 	UBYTE              rl_Shadow;
-	struct ExecBase *  rl_SysBase;
-	struct DOSBase *   rl_DOSBase;
-	struct Library *   rl_Unused1; /* rl_IeeeCDBase */
-	BPTR               rl_SegList;
-	struct FileHandle *rl_Unused2; /* rl_NIL */
+	APTR ExecBase *  rl_SysBase;
+	APTR DOSBase *   rl_DOSBase;
+	APTR Library *   rl_Unused1; /* rl_IeeeCDBase */
+	LONG               rl_SegList;
+	LONG			   rl_Unused2; /* rl_NIL */
 	LONG               rl_Unused3; /* rl_Chunk */
 	LONG               rl_Unused4; /* rl_MaxNest */
-	APTR               rl_Unused5; /* rl_NULL */
-	APTR               rl_Unused6; /* rl_FALSE */
-	APTR               rl_Unused7; /* rl_TRUE */
-	APTR               rl_Unused8; /* rl_REXX */
-	APTR               rl_Unused9; /* rl_COMMAND */
-	APTR               rl_Unused10; /* rl_STDIN */
-	APTR               rl_Unused11; /* rl_STDOUT */
-	APTR               rl_Unused12; /* rl_STDERR */
+	struct NexxStr *   rl_Unused5; /* rl_NULL */
+	struct NexxStr *   rl_Unused6; /* rl_FALSE */
+	struct NexxStr *   rl_Unused7; /* rl_TRUE */
+	struct NexxStr *   rl_Unused8; /* rl_REXX */
+	struct NexxStr *   rl_Unused9; /* rl_COMMAND */
+	struct NexxStr *   rl_Unused10; /* rl_STDIN */
+	struct NexxStr *   rl_Unused11; /* rl_STDOUT */
+	struct NexxStr *   rl_Unused12; /* rl_STDERR */
 	STRPTR             rl_Version;
 	STRPTR             rl_Unused13; /* rl_TaskName */
 	LONG               rl_Unused14; /* rl_TaskPri */

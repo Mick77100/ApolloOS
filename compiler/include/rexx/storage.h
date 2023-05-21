@@ -22,17 +22,17 @@
 struct RexxMsg
 {
 	struct Message	rm_Node;
-	IPTR		rm_Private1; /* Was rm_TaskBlock */
-	IPTR		rm_Private2; /* Was rm_LibBase */
+	APTR		rm_Private1; /* Was rm_TaskBlock */
+	APTR		rm_Private2; /* Was rm_LibBase */
 	LONG		rm_Action; /* What to do ? */
 	LONG		rm_Result1; /* The first result as a number */
-	IPTR		rm_Result2; /* The second result, most of the time an argstring */
-	IPTR		rm_Args[16]; /* 16 possible arguments for function calls */
+	LONG		rm_Result2; /* The second result, most of the time an argstring */
+	STRPTR		rm_Args[16]; /* 16 possible arguments for function calls */
 	struct MsgPort *rm_PassPort;
 	STRPTR		rm_CommAddr; /* The starting host environment */
 	STRPTR		rm_FileExt; /* The file extension for macro files */
-	BPTR            rm_Stdin; /* Input filehandle to use */
-	BPTR            rm_Stdout; /* Output filehandle to use */
+	LONG            rm_Stdin; /* Input filehandle to use */
+	LONG            rm_Stdout; /* Output filehandle to use */
 	LONG		rm_Unused1; /* Was rm_avail */
 };
 /* AROS comment: rm_Private1 and rm_Private2 are implementation specific.
@@ -106,8 +106,8 @@ struct RexxRsrc
 	WORD        rr_Func; /* Library offset of clean up function */
 	APTR        rr_Base; /* Library base of clean up function */
 	LONG        rr_Size; /* Total size of structure */
-	SIPTR       rr_Arg1; /* Meaning depends on type of Resource */
-	SIPTR       rr_Arg2; /* Meaning depends on type of Resource */
+	LONG       rr_Arg1; /* Meaning depends on type of Resource */
+	LONG       rr_Arg2; /* Meaning depends on type of Resource */
 };
 
 /* Types for the resource nodes */
