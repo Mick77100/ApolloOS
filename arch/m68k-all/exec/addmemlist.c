@@ -17,7 +17,7 @@
 #include "memory.h"
 
 AROS_LH5(void, AddMemList,
-	AROS_LHA(IPTR,   size,       D0),
+	AROS_LHA(ULONG,   size,       D0),
 	AROS_LHA(ULONG,  attributes, D1),
 	AROS_LHA(LONG,   pri,        D2),
 	AROS_LHA(APTR,   base,       A0),
@@ -45,7 +45,7 @@ AROS_LH5(void, AddMemList,
     mh->mh_First->mc_Next=NULL;
     mh->mh_First->mc_Bytes=size-MEMHEADER_TOTAL;
     mh->mh_Lower=mh->mh_First;
-    mh->mh_Upper=(APTR)((UBYTE *)base+size);
+    mh->mh_Upper=(ULONG)((UBYTE *)base+size);
     mh->mh_Free=mh->mh_First->mc_Bytes;
 
     /* Protect the memory list. */
