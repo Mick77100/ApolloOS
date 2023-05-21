@@ -8,7 +8,7 @@
 
 #include "card_intern.h"
 
-AROS_LH1(ULONG, BeginCardAccess,
+AROS_LH1(BOOL, BeginCardAccess,
 	AROS_LHA(struct CardHandle*, handle, A1),
 	struct CardResource*, CardResource, 4, Card)
 {

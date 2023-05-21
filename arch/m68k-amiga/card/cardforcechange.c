@@ -10,7 +10,7 @@
 
 #include "card_intern.h"
 
-AROS_LH0(ULONG, CardForceChange,
+AROS_LH0(BOOL, CardForceChange,
 	struct CardResource*, CardResource, 15, Card)
 {
     AROS_LIBFUNC_INIT
