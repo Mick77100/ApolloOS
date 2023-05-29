@@ -15,7 +15,7 @@
     NAME */
 #include <proto/graphics.h>
 
-	AROS_LH3(ULONG, AreaMove,
+	AROS_LH3(LONG, AreaMove,
 
 /*  SYNOPSIS */
 	AROS_LHA(struct RastPort *, rp, A1),

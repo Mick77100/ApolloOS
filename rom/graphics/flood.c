@@ -15,25 +15,25 @@
 
 struct fillinfo
 {
-    ULONG fillpen;
+    WORD fillpen;
     BOOL (*isfillable)();
     struct RastPort *rp;
     UBYTE *rasptr;
-    ULONG bpr;
-    ULONG orig_apen;
-    ULONG orig_bpen;
-    ULONG rp_width;
-    ULONG rp_height;
+    WORD bpr;
+    WORD orig_apen;
+    WORD orig_bpen;
+    WORD rp_width;
+    WORD rp_height;
     
     struct GfxBase *gfxbase;
 };
 
-static VOID settmpraspixel(BYTE *rasptr, LONG x, LONG y,  ULONG bpr, UBYTE state);
-static BOOL gettmpraspixel(BYTE *rasptr, LONG x, LONG y,  ULONG bpr );
+static VOID settmpraspixel(BYTE *rasptr, WORD x, WORD y,  WORD bpr, UBYTE state);
+static BOOL gettmpraspixel(BYTE *rasptr, WORD x, WORD y,  WORD bpr );
 
-static BOOL filline(struct fillinfo *fi, LONG start_x, LONG start_y);
-static BOOL outline_isfillable(struct fillinfo *fi, LONG x, LONG y);
-static BOOL color_isfillable(struct fillinfo *fi, LONG x, LONG y);
+static BOOL filline(struct fillinfo *fi, WORD start_x, WORD start_y);
+static BOOL outline_isfillable(struct fillinfo *fi, WORD x, WORD y);
+static BOOL color_isfillable(struct fillinfo *fi, WORD x, WORD y);
 
 #if DEBUG_FLOOD
 static int fail_count;
@@ -50,8 +50,8 @@ static int pix_written;
 /*  SYNOPSIS */
 	AROS_LHA(struct RastPort *, rp, A1),
 	AROS_LHA(ULONG            , mode, D2),
-	AROS_LHA(LONG             , x, D0),
-	AROS_LHA(LONG             , y, D1),
+	AROS_LHA(WORD             , x, D0),
+	AROS_LHA(WORD             , y, D1),
 
 /*  LOCATION */
 	struct GfxBase *, GfxBase, 55, Graphics)
@@ -88,7 +88,7 @@ static int pix_written;
     AROS_LIBFUNC_INIT
     
     struct TmpRas *tmpras = rp->TmpRas;
-    ULONG bpr, needed_size;
+    WORD bpr, needed_size;
     
     struct fillinfo fi;
     
@@ -180,9 +180,9 @@ static int pix_written;
 
 
 
-static VOID settmpraspixel(BYTE *rasptr, LONG x, LONG y,  ULONG bpr, UBYTE state)
+static VOID settmpraspixel(BYTE *rasptr, WORD x, WORD y,  WORD bpr, UBYTE state)
 {
-    ULONG idx  = COORD_TO_BYTEIDX(x, y, bpr);
+    WORD idx  = COORD_TO_BYTEIDX(x, y, bpr);
     UBYTE mask = XCOORD_TO_MASK( x );
     
     if (state)
@@ -193,9 +193,9 @@ static VOID settmpraspixel(BYTE *rasptr, LONG x, LONG y,  ULONG bpr, UBYTE state
     return;
 }
 
-static BOOL gettmpraspixel(BYTE *rasptr, LONG x, LONG y,  ULONG bpr )
+static BOOL gettmpraspixel(BYTE *rasptr, WORD x, WORD y,  WORD bpr )
 {
-    ULONG idx  = COORD_TO_BYTEIDX(x, y, bpr);
+    WORD idx  = COORD_TO_BYTEIDX(x, y, bpr);
     UBYTE mask = XCOORD_TO_MASK( x );
     BOOL state;
     
@@ -213,7 +213,7 @@ static BOOL gettmpraspixel(BYTE *rasptr, LONG x, LONG y,  ULONG bpr )
 #undef GfxBase
 #define GfxBase (fi->gfxbase)
 
-static BOOL color_isfillable(struct fillinfo *fi, LONG x, LONG y)
+static BOOL color_isfillable(struct fillinfo *fi, WORD x, WORD y)
 {
     BOOL fill;
 
@@ -236,7 +236,7 @@ static BOOL color_isfillable(struct fillinfo *fi, LONG x, LONG y)
     return fill;
 }
 
-static BOOL outline_isfillable(struct fillinfo *fi, LONG x, LONG y)
+static BOOL outline_isfillable(struct fillinfo *fi, WORD x, WORD y)
 {
     BOOL fill;
 /*    EnterFunc(bug("outline_isfillable(fi=%p, x=%d, y=%d)\n",
@@ -268,13 +268,13 @@ static BOOL outline_isfillable(struct fillinfo *fi, LONG x, LONG y)
 
 
 
-static VOID putfillpixel(struct fillinfo *fi, LONG x, LONG y)
+static VOID putfillpixel(struct fillinfo *fi, WORD x, WORD y)
 {
 
     /* TODO: Implement use of patterns */
 
 #ifdef USE_WRITEPIXEL
-    ULONG pixval, set_pixel = 0UL;
+    WORD pixval, set_pixel = 0UL;
     
     if (fi->rp->AreaPtrn)
     {
@@ -311,10 +311,10 @@ static VOID putfillpixel(struct fillinfo *fi, LONG x, LONG y)
 
 struct stack
 {
-    ULONG current;
+    WORD current;
     struct scanline
     {
-       LONG x, y;
+       WORD x, y;
     } items [STACKSIZE];
 };
 
@@ -323,7 +323,7 @@ static VOID init_stack(struct stack *s)
     s->current = 0;
 }
 
-static BOOL push(struct stack *s, LONG x, LONG y)
+static BOOL push(struct stack *s, WORD x, WORD y)
 {
    if (s->current == STACKSIZE)
    	return FALSE;
@@ -337,7 +337,7 @@ static BOOL push(struct stack *s, LONG x, LONG y)
    return TRUE;
    
 }
-static BOOL pop(struct stack *s, LONG *xptr, LONG *yptr)
+static BOOL pop(struct stack *s, WORD *xptr, WORD *yptr)
 {
     if (s->current == 0)
     	return FALSE;
@@ -352,12 +352,12 @@ static BOOL pop(struct stack *s, LONG *xptr, LONG *yptr)
     return TRUE;
 }
 
-static BOOL filline(struct fillinfo *fi, LONG start_x, LONG start_y)
+static BOOL filline(struct fillinfo *fi, WORD start_x, WORD start_y)
 {
-    LONG x;
+    WORD x;
     
-    LONG rightmost_above, rightmost_below;
-    LONG leftmost_above, leftmost_below;
+    WORD rightmost_above, rightmost_below;
+    WORD leftmost_above, leftmost_below;
     struct stack stack;
     
     EnterFunc(bug("filline(fi=%p, start_x=%d, start_y=%d)\n"

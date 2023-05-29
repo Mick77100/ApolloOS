@@ -17,7 +17,7 @@
 #include <proto/graphics.h>
 #include <proto/oop.h>
 
-	AROS_LH2(IPTR, GetBitMapAttr,
+	AROS_LH2(ULONG, GetBitMapAttr,
 
 /*  SYNOPSIS */
 	AROS_LHA(struct BitMap *, bitmap, A0),
@@ -58,32 +58,32 @@
 {
     AROS_LIBFUNC_INIT
 
-    IPTR retval;
+    ULONG retval;
     
     switch(attribute)
     {
 	case BMA_HEIGHT:
-            retval = (IPTR)bitmap->Rows;
+            retval = (ULONG)bitmap->Rows;
 	    break;
 	    
 	case BMA_WIDTH:
 	  /* must return width in pixel! */
-            retval = (IPTR)(bitmap->BytesPerRow * 8);
+            retval = (ULONG)(bitmap->BytesPerRow * 8);
 	    break;
 	    
 	case BMA_DEPTH:
 	    if (IS_HIDD_BM(bitmap))
 	    {
-	    	retval = (IPTR)HIDD_BM_REALDEPTH(bitmap);
+	    	retval = (ULONG)HIDD_BM_REALDEPTH(bitmap);
 	    }
 	    else
 	    {
-            	retval = (IPTR)bitmap->Depth;
+            	retval = (ULONG)bitmap->Depth;
 	    }
 	    break;
 	    
 	case BMA_FLAGS:
-            retval = (IPTR)(bitmap->Flags & (BMF_DISPLAYABLE |
+            retval = (ULONG)(bitmap->Flags & (BMF_DISPLAYABLE |
 					     BMF_INTERLEAVED |
 					     BMF_STANDARD));
 	    break;
