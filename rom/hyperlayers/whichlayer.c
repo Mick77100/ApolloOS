@@ -24,8 +24,8 @@
 
 /*  SYNOPSIS */
 	AROS_LHA(struct Layer_Info *, li, A0),
-	AROS_LHA(LONG               , x,  D0),
-	AROS_LHA(LONG               , y,  D1),
+	AROS_LHA(WORD               , x,  D0),
+	AROS_LHA(WORD               , y,  D1),
 
 /*  LOCATION */
 	struct LayersBase *, LayersBase, 22, Layers)
