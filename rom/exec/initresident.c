@@ -25,7 +25,7 @@
 
 /*  SYNOPSIS */
 	AROS_LHA(struct Resident *, resident, A1),
-	AROS_LHA(BPTR,              segList,  D1),
+	AROS_LHA(ULONG,              segList,  D1),
 
 /*  LOCATION */
 	struct ExecBase *, SysBase, 17, Exec)
@@ -128,7 +128,7 @@
 	    {
 		library = AROS_UFC3(struct Library *, init->init,
                     AROS_UFCA(struct Library *,  library, D0),
-		    AROS_UFCA(BPTR,              segList, A0),
+		    AROS_UFCA(ULONG,              segList, A0),
                     AROS_UFCA(struct ExecBase *, SysBase, A6)
 		);
 	    }
@@ -167,13 +167,13 @@
 #if !defined(__mc68000__)
             library = AROS_UFC3(struct Library *, resident->rt_Init,
                 AROS_UFCA(struct Library *,  0L, D0),
-                AROS_UFCA(BPTR,              segList, A0),
+                AROS_UFCA(ULONG,              segList, A0),
                 AROS_UFCA(struct ExecBase *, SysBase, A6)
             );
 #else
             library = AROS_UFC4(struct Library *, resident->rt_Init,
                 AROS_UFCA(struct Library *,  0L, D0),
-                AROS_UFCA(BPTR,              segList, A0),
+                AROS_UFCA(ULONG,              segList, A0),
                 // Dummy variable. Bad programs may not preserve A4.
                 AROS_UFCA(ULONG,             0L, A4),
                 AROS_UFCA(struct ExecBase *, SysBase, A6)

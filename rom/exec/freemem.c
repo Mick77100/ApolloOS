@@ -30,8 +30,8 @@
         AROS_LH2(void, FreeMem,
 
 /*  SYNOPSIS */
-       AROS_LHA(APTR,  memoryBlock, A1),
-       AROS_LHA(IPTR,  byteSize,    D0),
+       AROS_LHA(void *,  memoryBlock, A1),
+       AROS_LHA(ULONG,  byteSize,    D0),
 
 /*  LOCATION */
         struct ExecBase *, SysBase, 35, Exec)

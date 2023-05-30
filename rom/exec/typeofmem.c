@@ -21,7 +21,7 @@
 	AROS_LH1(ULONG, TypeOfMem,
 
 /*  SYNOPSIS */
-	AROS_LHA(APTR, address, A1),
+	AROS_LHA(void, address, A1),
 
 /*  LOCATION */
 	struct ExecBase *, SysBase, 89, Exec)

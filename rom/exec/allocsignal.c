@@ -26,7 +26,7 @@
 	AROS_LH1(BYTE, AllocSignal,
 
 /*  SYNOPSIS */
-	AROS_LHA(LONG, signalNum, D0),
+	AROS_LHA(BYTE, signalNum, D0),
 
 /*  LOCATION */
 	struct ExecBase *, SysBase, 55, Exec)
@@ -69,7 +69,7 @@
     AROS_LIBFUNC_EXIT
 } /* AllocSignal() */
 
-LONG AllocTaskSignal(struct Task *thisTask, LONG signalNum, struct ExecBase *SysBase)
+LONG AllocTaskSignal(struct Task *thisTask, BYTE signalNum, struct ExecBase *SysBase)
 {
     ULONG mask;
     ULONG mask1;

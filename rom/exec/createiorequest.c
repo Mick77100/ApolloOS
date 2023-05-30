@@ -16,7 +16,7 @@
 
     NAME */
 
-	AROS_LH2(APTR, CreateIORequest,
+	AROS_LH2(struct IORequest, CreateIORequest,
 
 /*  SYNOPSIS */
 	AROS_LHA(struct MsgPort *, ioReplyPort, A0),

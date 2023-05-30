@@ -23,7 +23,7 @@
         AROS_LH1(void, DeletePool,
 
 /*  SYNOPSIS */
-        AROS_LHA(APTR, poolHeader, A0),
+        AROS_LHA(void, poolHeader, A0),
 
 /*  LOCATION */
         struct ExecBase *, SysBase, 117, Exec)

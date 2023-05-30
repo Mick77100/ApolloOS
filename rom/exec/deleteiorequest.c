@@ -17,7 +17,7 @@
 	AROS_LH1(void, DeleteIORequest,
 
 /*  SYNOPSIS */
-	AROS_LHA(APTR, iorequest, A0),
+	AROS_LHA(struct IORequest, ioReq, A0),
 
 /*  LOCATION */
 	struct ExecBase *, SysBase, 110, Exec)
@@ -46,6 +46,6 @@
 
     if(iorequest != NULL)
 	/* Just free the memory */
-	FreeMem(iorequest, ((struct Message *)iorequest)->mn_Length);
+	FreeMem(ioReq, ((struct Message *)iorequest)->mn_Length);
     AROS_LIBFUNC_EXIT
 } /* DeleteIORequest() */

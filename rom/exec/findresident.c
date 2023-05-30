@@ -21,7 +21,7 @@
 	AROS_LH1(struct Resident *, FindResident,
 
 /*  SYNOPSIS */
-	AROS_LHA(const UBYTE *, name, A1),
+	AROS_LHA(const_STRPTR *, name, A1),
 
 /*  LOCATION */
 	struct ExecBase *, SysBase, 16, Exec)
@@ -67,7 +67,7 @@
     AROS_LIBFUNC_EXIT
 } /* FindResident */
 
-IPTR *InternalFindResident(const UBYTE *name, IPTR *list)
+IPTR *InternalFindResident(const_STRPTR *name, IPTR *list)
 {
     if (list)
     {

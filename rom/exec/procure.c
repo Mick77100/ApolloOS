@@ -14,7 +14,7 @@
 
     NAME */
 
-	AROS_LH2(ULONG, Procure,
+	AROS_LH2(void, Procure,
 
 /*  SYNOPSIS */
 	AROS_LHA(struct SignalSemaphore  *, sigSem, A0),

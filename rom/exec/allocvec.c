@@ -14,10 +14,10 @@
 
     NAME */
 
-        AROS_LH2(APTR, AllocVec,
+        AROS_LH2(void, AllocVec,
 
 /*  SYNOPSIS */
-        AROS_LHA(IPTR,  byteSize,     D0),
+        AROS_LHA(ULONG,  byteSize,     D0),
         AROS_LHA(ULONG, requirements, D1),
 
 /*  LOCATION */
@@ -68,10 +68,10 @@
         return NULL;
 
     /* Store size */
-    *(IPTR *)ret=byteSize;
+    *(ULONG *)ret=byteSize;
 
     /* return free space */
-    return ret+AROS_ALIGN(sizeof(IPTR));
+    return ret+AROS_ALIGN(sizeof(ULONG));
     AROS_LIBFUNC_EXIT
 } /* AllocVec */
 

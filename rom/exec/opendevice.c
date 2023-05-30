@@ -23,11 +23,11 @@
 
     NAME */
 
-	AROS_LH4(LONG, OpenDevice,
+	AROS_LH4(BYTE, OpenDevice,
 
 /*  SYNOPSIS */
 	AROS_LHA(CONST_STRPTR,       devName,    A0),
-	AROS_LHA(IPTR,               unitNumber, D0),
+	AROS_LHA(ULONG,               unitNumber, D0),
 	AROS_LHA(struct IORequest *, iORequest,  A1),
 	AROS_LHA(ULONG,              flags,      D1),
 
@@ -111,7 +111,7 @@
 	/* Call Open vector. */
 	AROS_LVO_CALL3NR(void,
 	    AROS_LCA(struct IORequest *,iORequest,A1),
-	    AROS_LCA(IPTR, unitNumber,D0),
+	    AROS_LCA(ULONG, unitNumber,D0),
 	    AROS_LCA(ULONG,flags,D1),
 	    struct Device *, iORequest->io_Device, 1, dev);
 

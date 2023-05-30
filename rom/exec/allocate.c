@@ -23,11 +23,11 @@
 
     NAME */
 
-        AROS_LH2(APTR, Allocate,
+        AROS_LH2(void, Allocate,
 
 /*  SYNOPSIS */
         AROS_LHA(struct MemHeader *, freeList, A0),
-        AROS_LHA(IPTR,               byteSize, D0),
+        AROS_LHA(ULONG,               byteSize, D0),
 
 /*  LOCATION */
         struct ExecBase *, SysBase, 31, Exec)

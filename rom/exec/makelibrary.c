@@ -23,8 +23,8 @@
 
 /*  SYNOPSIS */
 	AROS_LHA(CONST_APTR, funcInit,   A0),
-	AROS_LHA(CONST_APTR, structInit, A1),
-	AROS_LHA(ULONG_FUNC, libInit,    A2),
+	AROS_LHA(struct InitStruct *, structInit, A1),
+	AROS_LHA(APTR, libInit,    A2),
 	AROS_LHA(ULONG,      dataSize,   D0),
 	AROS_LHA(BPTR,       segList,    D1),
 
