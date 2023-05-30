@@ -1,6 +1,6 @@
 /*
-    Copyright © 1995-2013, The AROS Development Team. All rights reserved.
-    Copyright © 2001-2003, The MorphOS Development Team. All Rights Reserved.
+    Copyright ï¿½ 1995-2013, The AROS Development Team. All rights reserved.
+    Copyright ï¿½ 2001-2003, The MorphOS Development Team. All Rights Reserved.
     $Id$
 */
 
@@ -18,7 +18,7 @@
         AROS_LH2(BOOL, PointInImage,
 
 /*  SYNOPSIS */
-        AROS_LHA(struct Point,          point, D0),
+        AROS_LHA(LONG,          point, D0),
         AROS_LHA(struct Image *, image, A0),
 
 /*  LOCATION */

@@ -1,6 +1,6 @@
 /*
-    Copyright © 1995-2019, The AROS Development Team. All rights reserved.
-    Copyright © 2001-2003, The MorphOS Development Team. All Rights Reserved.
+    Copyright ï¿½ 1995-2019, The AROS Development Team. All rights reserved.
+    Copyright ï¿½ 2001-2003, The MorphOS Development Team. All Rights Reserved.
     $Id$
 */
 
@@ -12,7 +12,7 @@
     NAME */
 #include <proto/intuition.h>
 
-        AROS_LH1(void Screen *, GetDefaultPubScreen,
+        AROS_LH1(void, GetDefaultPubScreen,
 
 /*  SYNOPSIS */
         AROS_LHA(UBYTE *, nameBuffer, A0),

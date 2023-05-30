@@ -1,5 +1,5 @@
 /*
-    Copyright © 1995-2007, The AROS Development Team. All rights reserved.
+    Copyright ? 1995-2007, The AROS Development Team. All rights reserved.
     $Id$	$Log
 
     Desc: Graphics function InitRastPort()
@@ -14,11 +14,11 @@
 
     NAME */
 
-	AROS_LH3(void InitTmpRas,
+	AROS_LH3(void, InitTmpRas,
 
 /*  SYNOPSIS */
 	AROS_LHA(struct TmpRas  *, tmpras, A0),
-	AROS_LHA(void *          , buffer, A1),
+	AROS_LHA(void           *, buffer, A1),
 	AROS_LHA(ULONG           , size  , D0),
 
 /*  LOCATION */
