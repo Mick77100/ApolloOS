@@ -19,7 +19,7 @@
 
 /*  SYNOPSIS */
 	AROS_LHA(struct RastPort *, rp, A1),
-	AROS_LHA(ULONG            , drawMode, D0),
+	AROS_LHA(UBYTE            , drawMode, D0),
 
 /*  LOCATION */
 	struct GfxBase *, GfxBase, 59, Graphics)
@@ -29,7 +29,7 @@
 
     INPUTS
 	rp       - RastPort
-	drawMode - see graphics/rastport.h for possible flags.
+	drawMode - see graphics/rastport.h for possible flags. 0-255
 
     RESULT
 
