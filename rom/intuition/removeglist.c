@@ -15,7 +15,7 @@ struct RemoveGListActionMsg
     struct IntuiActionMsg    msg;
     struct Window   	    *window;
     struct Gadget   	    *gadget;
-    LONG    	    	     numGad;
+    WORD    	    	     numGad;
     UWORD   	    	     count;
     BOOL    	    	     success;
 };
@@ -34,7 +34,7 @@ static VOID int_removeglist(struct RemoveGListActionMsg *msg,
 /*  SYNOPSIS */
         AROS_LHA(struct Window *, remPtr, A0),
         AROS_LHA(struct Gadget *, gadget, A1),
-        AROS_LHA(LONG           , numGad, D0),
+        AROS_LHA(WORD           , numGad, D0),
 
 /*  LOCATION */
         struct IntuitionBase *, IntuitionBase, 74, Intuition)
@@ -69,7 +69,7 @@ static VOID int_removeglist(struct RemoveGListActionMsg *msg,
     struct Gadget   *pred;
     struct Gadget   *last;
     struct IIHData  *iihdata;
-    LONG             numGad2;
+    WORD             numGad2;
     UWORD            count;
     BOOL             done = TRUE;
 
@@ -175,11 +175,11 @@ static VOID int_removeglist(struct RemoveGListActionMsg *msg,
 {
     struct Window   *remPtr = msg->window;
     struct Gadget   *gadget = msg->gadget;
-    LONG    	     numGad = msg->numGad;
+    WORD    	     numGad = msg->numGad;
     struct Gadget   *pred;
     struct Gadget   *last;
     struct IIHData  *iihdata;
-    LONG             numGad2;
+    WORD             numGad2;
     UWORD            count;
 
     DEBUG_REMOVEGLIST(dprintf("IntRemoveGList: Window 0x%lx Gadgets 0x%lx Num %ld\n",

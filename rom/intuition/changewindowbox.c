@@ -13,10 +13,10 @@ struct ChangeWindowBoxActionMsg
 {
     struct IntuiActionMsg    msg;
     struct Window   	    *window;
-    LONG    	    	     left;
-    LONG    	    	     top;
-    LONG    	    	     width;
-    LONG    	    	     height;
+    WORD    	    	     left;
+    WORD    	    	     top;
+    WORD    	    	     width;
+    WORD    	    	     height;
 };
 
 static VOID int_changewindowbox(struct ChangeWindowBoxActionMsg *msg,
@@ -31,10 +31,10 @@ static VOID int_changewindowbox(struct ChangeWindowBoxActionMsg *msg,
 
 /*  SYNOPSIS */
         AROS_LHA(struct Window *, window, A0),
-        AROS_LHA(LONG           , left, D0),
-        AROS_LHA(LONG           , top, D1),
-        AROS_LHA(LONG           , width, D2),
-        AROS_LHA(LONG           , height, D3),
+        AROS_LHA(WORD           , left, D0),
+        AROS_LHA(WORD           , top, D1),
+        AROS_LHA(WORD           , width, D2),
+        AROS_LHA(WORD           , height, D3),
 
 /*  LOCATION */
         struct IntuitionBase *, IntuitionBase, 81, Intuition)

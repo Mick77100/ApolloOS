@@ -33,12 +33,12 @@ extern UWORD BgPattern[];
 
 struct sysreqdims
 {
-    UWORD width;       /* width of the requester */
-    UWORD height;      /* height of the requester */
-    UWORD fontheight;  /* height of the default font */
-    UWORD itextleft;
+    UWORD width;       /* width of the requester */ /* NO SOURCE BUT WORD TYPE SEEN BETTER IN PLACE OF UWORD */
+    UWORD height;      /* height of the requester */   /* SAME IDEA*/
+    UWORD fontheight;  /* height of the default font */   /* SAME IDEA*/
+    UWORD itextleft;									   /* SAME IDEA*/
     int   gadgets;     /* number of gadgets */
-    UWORD gadgetwidth; /* width of a gadget */
+    UWORD gadgetwidth; /* width of a gadget */			   /* SAME IDEA*/
 };
 
 /**********************************************************************************************/

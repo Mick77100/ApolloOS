@@ -21,8 +21,8 @@
         AROS_LHA(struct IntuiText *, negText, A3),
         AROS_LHA(ULONG             , pFlag, D0),
         AROS_LHA(ULONG             , nFlag, D1),
-        AROS_LHA(ULONG             , width, D2),
-        AROS_LHA(ULONG             , height, D3),
+        AROS_LHA(WORD             , width, D2),
+        AROS_LHA(WORD             , height, D3),
 
 /*  LOCATION */
         struct IntuitionBase *, IntuitionBase, 58, Intuition)
