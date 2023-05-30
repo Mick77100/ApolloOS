@@ -13,7 +13,7 @@
 #include <aros/asmcall.h>
 #include <proto/utility.h>
 
-	AROS_LH3(IPTR, CallHookPkt,
+	AROS_LH3(IPTR, CallHookPkt,				/* IS AN ULONG IN AMIGA SOURCE */
 
 /*  SYNOPSIS */
 	AROS_LHA(struct Hook *, hook, A0),

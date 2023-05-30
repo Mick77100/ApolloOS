@@ -17,7 +17,7 @@
 	AROS_LH1I(UBYTE, ToUpper,
 
 /*  SYNOPSIS */
-	AROS_LHA(ULONG, character, D0),
+	AROS_LHA(UBYTE, character, D0),
 
 /*  LOCATION */
 	struct UtilityBase *, UtilityBase, 29, Utility)
