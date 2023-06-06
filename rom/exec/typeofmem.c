@@ -1,5 +1,5 @@
 /*
-    Copyright © 1995-2010, The AROS Development Team. All rights reserved.
+    Copyright ? 1995-2010, The AROS Development Team. All rights reserved.
     $Id$
 
     Desc: Examine memory
@@ -21,7 +21,7 @@
 	AROS_LH1(ULONG, TypeOfMem,
 
 /*  SYNOPSIS */
-	AROS_LHA(void, address, A1),
+	AROS_LHA(void *, address, A1),
 
 /*  LOCATION */
 	struct ExecBase *, SysBase, 89, Exec)

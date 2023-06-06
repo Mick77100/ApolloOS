@@ -18,7 +18,9 @@
         AROS_LH2(BOOL, PointInImage,
 
 /*  SYNOPSIS */
-        AROS_LHA(LONG,          point, D0),
+
+        AROS_LHA(ULONG,          point, D0),
+
         AROS_LHA(struct Image *, image, A0),
 
 /*  LOCATION */

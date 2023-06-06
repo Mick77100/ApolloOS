@@ -869,7 +869,7 @@ struct IntIntuiMessage
 #define SYSGADGET_ACTIVE (iihdata->ActiveSysGadget != NULL)
 
 VOID int_refreshglist(struct Gadget *gadgets, struct Window *window,
-                      struct Requester *requester, WORD numGad, WORD mustbe, WORD mustnotbe,
+                      struct Requester *requester, LONG numGad, LONG mustbe, LONG mustnotbe,
                       struct IntuitionBase *IntuitionBase);
 
 VOID int_RefreshWindowFrame(struct Window *window, LONG mustbe, LONG mustnotbe,
@@ -1123,7 +1123,7 @@ void NotifyDepthArrangement(struct Window *w, struct IntuitionBase *IntuitionBas
 /* printitext.c */
 
 void int_PrintIText(struct RastPort * rp, struct IntuiText * iText,
-            	    WORD leftOffset, WORD topOffset, BOOL ignore_attributes,
+            	    LONG leftOffset, LONG topOffset, BOOL ignore_attributes,
 		    struct IntuitionBase *IntuitionBase);
 
 /* Private extra functions */

@@ -22,7 +22,7 @@
 #include <exec/memheaderext.h>
 #include <proto/exec.h>
 
-        AROS_LH3(void, CreatePool,
+        AROS_LH3(APTR, CreatePool,
 
 /*  SYNOPSIS */
         AROS_LHA(ULONG, requirements, D0),

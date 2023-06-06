@@ -1,5 +1,5 @@
 /*
-    Copyright © 1995-2001, The AROS Development Team. All rights reserved.
+    Copyright ? 1995-2001, The AROS Development Team. All rights reserved.
     $Id$
 
     Desc: Code for miscellaneous operations needed bz graphics
@@ -16,7 +16,7 @@
 
 
 
-BOOL pattern_pen(struct RastPort *rp, WORD x, WORD y, ULONG apen, ULONG bpen, ULONG *pixval_ptr, struct GfxBase *GfxBase)
+BOOL pattern_pen(struct RastPort *rp, WORD x, WORD y, WORD apen, WORD bpen, WORD *pixval_ptr, struct GfxBase *GfxBase)
 {
     ULONG idx, mask;
     ULONG set_pixel, pixval = 0;

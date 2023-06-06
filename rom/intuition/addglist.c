@@ -23,8 +23,8 @@
 /*  SYNOPSIS */
         AROS_LHA(struct Window    *, window, A0),
         AROS_LHA(struct Gadget    *, gadget, A1),
-        AROS_LHA(UWORD             , position, D0),
-        AROS_LHA(WORD              , numGad, D1),
+        AROS_LHA(ULONG             , position, D0),
+        AROS_LHA(LONG              , numGad, D1),
         AROS_LHA(struct Requester *, requester, A2),
 
 /*  LOCATION */

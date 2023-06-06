@@ -75,7 +75,7 @@ static int charsinstring(CONST_STRPTR string, char c);
         AROS_LHA(struct Window     *, RefWindow, A0),
         AROS_LHA(struct EasyStruct *, easyStruct, A1),
         AROS_LHA(ULONG              , IDCMP, D0),
-        AROS_LHA(RAWARG             , Args, A3), /* IT IS AN APTR ON AMIGA SOURCE*/
+        AROS_LHA(RAWARG             , Args, A3),
 
 /*  LOCATION */
         struct IntuitionBase *, IntuitionBase, 99, Intuition)

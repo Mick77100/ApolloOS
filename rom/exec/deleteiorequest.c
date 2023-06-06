@@ -1,5 +1,5 @@
 /*
-    Copyright © 1995-2009, The AROS Development Team. All rights reserved.
+    Copyright ? 1995-2009, The AROS Development Team. All rights reserved.
     $Id$
 
     Desc: Free an I/O request.
@@ -17,7 +17,7 @@
 	AROS_LH1(void, DeleteIORequest,
 
 /*  SYNOPSIS */
-	AROS_LHA(struct IORequest, ioReq, A0),
+	AROS_LHA(struct IORequest *, iorequest, A0),
 
 /*  LOCATION */
 	struct ExecBase *, SysBase, 110, Exec)
@@ -46,6 +46,6 @@
 
     if(iorequest != NULL)
 	/* Just free the memory */
-	FreeMem(ioReq, ((struct Message *)iorequest)->mn_Length);
+	FreeMem(iorequest, ((struct Message *)iorequest)->mn_Length);
     AROS_LIBFUNC_EXIT
 } /* DeleteIORequest() */

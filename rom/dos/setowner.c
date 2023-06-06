@@ -1,5 +1,5 @@
 /*
-    Copyright © 1995-2013, The AROS Development Team. All rights reserved.
+    Copyright ? 1995-2013, The AROS Development Team. All rights reserved.
     $Id$
 
     Desc: Set the owner of a file.
@@ -20,7 +20,7 @@
 
 /*  SYNOPSIS */
         AROS_LHA(STRPTR, name,       D1),
-        AROS_LHA(UONG,  owner_info, D2),
+        AROS_LHA(LONG,  owner_info, D2),
 
 /*  LOCATION */
         struct DosLibrary *, DOSBase, 166, Dos)

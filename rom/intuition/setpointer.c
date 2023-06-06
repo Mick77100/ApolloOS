@@ -16,11 +16,11 @@
 
 /*  SYNOPSIS */
         AROS_LHA(struct Window *, window, A0),
-        AROS_LHA(const UWORD   *, pointer, A1),    /* IS A UWORD ON AMIGA SOURCE NOT const UWORD */
-        AROS_LHA(WORD           , height, D0),
-        AROS_LHA(WORD           , width, D1),
-        AROS_LHA(WORD           , xOffset, D2),
-        AROS_LHA(WORD           , yOffset, D3),
+        AROS_LHA(const UWORD   *, pointer, A1),
+        AROS_LHA(LONG           , height, D0),
+        AROS_LHA(LONG           , width, D1),
+        AROS_LHA(LONG           , xOffset, D2),
+        AROS_LHA(LONG           , yOffset, D3),
 
 /*  LOCATION */
         struct IntuitionBase *, IntuitionBase, 45, Intuition)

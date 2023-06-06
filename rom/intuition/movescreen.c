@@ -15,8 +15,8 @@
 
 /*  SYNOPSIS */
         AROS_LHA(struct Screen *, screen, A0),
-        AROS_LHA(WORD           , dx, D0),
-        AROS_LHA(WORD           , dy, D1),
+        AROS_LHA(LONG           , dx, D0),
+        AROS_LHA(LONG           , dy, D1),
 
 /*  LOCATION */
         struct IntuitionBase *, IntuitionBase, 27, Intuition)

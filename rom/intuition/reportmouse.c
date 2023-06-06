@@ -15,7 +15,7 @@
         AROS_LH2(void, ReportMouse,
 
 /*  SYNOPSIS */
-        AROS_LHA(BOOL           , flag, D0),
+        AROS_LHA(LONG           , flag, D0),
         AROS_LHA(struct Window *, window, A0),
 
 /*  LOCATION */

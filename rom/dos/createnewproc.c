@@ -1,5 +1,5 @@
 /*
-    Copyright © 1995-2017, The AROS Development Team. All rights reserved.
+    Copyright ? 1995-2017, The AROS Development Team. All rights reserved.
     $Id$
 
     Desc: Create a new process
@@ -44,7 +44,7 @@ void internal_ChildFree(APTR tid, struct DosLibrary * DOSBase);
         AROS_LH1(struct Process *, CreateNewProc,
 
 /*  SYNOPSIS */
-        AROS_LHA(const struct TagItem *, tags, D1),
+        AROS_LHA(struct TagItem *, tags, D1),
 
 /*  LOCATION */
         struct DosLibrary *, DOSBase, 83, Dos)
@@ -509,7 +509,7 @@ void internal_ChildFree(APTR tid, struct DosLibrary * DOSBase);
         {
              /* If we *are* synchronous, then 'process' is still valid.
               */
-             SIPTR oldSignal = 0;
+             LONG oldSignal = 0;
              struct FileHandle *fh = NULL;
 
             /* Migrate the CIS handle to the new process */
@@ -680,7 +680,7 @@ BOOL copyVars(struct Process *fromProcess, struct Process *toProcess, struct Dos
         struct LocalVar *varNode;
         struct LocalVar *newVar;
         
-        /* We use the same strategy as in the ***Var() functions */
+        /* We use the same strategy as in the?***Var() functions */
         ForeachNode(&fromProcess->pr_LocalVars, varNode)
         {
             LONG  copyLength = strlen(varNode->lv_Node.ln_Name) + 1 +

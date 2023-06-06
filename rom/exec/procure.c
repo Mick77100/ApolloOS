@@ -1,5 +1,5 @@
 /*
-    Copyright © 1995-2015, The AROS Development Team. All rights reserved.
+    Copyright ? 1995-2015, The AROS Development Team. All rights reserved.
     $Id$
 
     Desc: Try to lock a semaphore.
@@ -14,7 +14,7 @@
 
     NAME */
 
-	AROS_LH2(void, Procure,
+	AROS_LH2(ULONG, Procure,
 
 /*  SYNOPSIS */
 	AROS_LHA(struct SignalSemaphore  *, sigSem, A0),

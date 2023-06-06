@@ -1,5 +1,5 @@
 /*
-    Copyright © 1995-2013 The AROS Development Team. All rights reserved.
+    Copyright ? 1995-2013 The AROS Development Team. All rights reserved.
     $Id$
 
     Desc:
@@ -19,7 +19,7 @@
     NAME */
 #include <proto/dos.h>
 
-        AROS_LH2(void, AllocDosObject,
+        AROS_LH2(APTR, AllocDosObject,
 
 /*  SYNOPSIS */
         AROS_LHA(ULONG                 , type, D1),

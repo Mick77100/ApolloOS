@@ -18,7 +18,7 @@
 
 /*  SYNOPSIS */
         AROS_LHA(struct Remember **, rememberKey, A0),
-        AROS_LHA(BOOL              , reallyForget, D0),
+        AROS_LHA(LONG              , reallyForget, D0),
 
 /*  LOCATION */
         struct IntuitionBase *, IntuitionBase, 68, Intuition)

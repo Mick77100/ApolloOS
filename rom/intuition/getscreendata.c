@@ -16,12 +16,12 @@
 #include <intuition/screens.h>
 #include <proto/intuition.h>
 
-        AROS_LH4(BOOL, GetScreenData,
+        AROS_LH4(LONG, GetScreenData,
 
 /*  SYNOPSIS */
         AROS_LHA(APTR           , buffer, A0),
-        AROS_LHA(UWORD          , size, D0),
-        AROS_LHA(UWORD          , type, D1),
+        AROS_LHA(ULONG          , size, D0),
+        AROS_LHA(ULONG          , type, D1),
         AROS_LHA(struct Screen *, screen, A1),
 
 /*  LOCATION */

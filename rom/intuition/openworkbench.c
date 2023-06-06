@@ -43,7 +43,7 @@ static ULONG FindMode(ULONG width, ULONG height, ULONG depth, struct IntuitionBa
 /*****************************************************************************
 
     NAME */
-        AROS_LH0(IPTR, OpenWorkBench,			/* IS AN ULONG ON AMIGA SOURCE */
+        AROS_LH0(IPTR, OpenWorkBench,
 
 /*  SYNOPSIS */
 

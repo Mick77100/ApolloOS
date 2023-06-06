@@ -19,7 +19,7 @@ static struct PubScreenNode *findcasename(struct List *list, const UBYTE *name);
         AROS_LH1(struct Screen *, LockPubScreen,
 
 /*  SYNOPSIS */
-        AROS_LHA(UBYTE, name, A0),
+        AROS_LHA(CONST_STRPTR, name, A0),
 
 /*  LOCATION */
         struct IntuitionBase *, IntuitionBase, 85, Intuition)

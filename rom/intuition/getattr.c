@@ -17,8 +17,8 @@
 
 /*  SYNOPSIS */
         AROS_LHA(ULONG   , attrID, D0),
-        AROS_LHA(Object *, object, A0),			/* IT IS AN APTR ON AMIGA SOURCE */
-        AROS_LHA(IPTR *  , storagePtr, A1),		/* IT IS AN ULONG ON AMIGA SOURCE */
+        AROS_LHA(Object *, object, A0),
+        AROS_LHA(IPTR *  , storagePtr, A1),
 
 /*  LOCATION */
         struct IntuitionBase *, IntuitionBase, 109, Intuition)

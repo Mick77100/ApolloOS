@@ -1,5 +1,5 @@
 /*
-    Copyright © 1995-2012, The AROS Development Team. All rights reserved.
+    Copyright ? 1995-2012, The AROS Development Team. All rights reserved.
     $Id$
 
     Desc: Allocate some memory.
@@ -14,7 +14,7 @@
 
     NAME */
 
-        AROS_LH2(void, AllocVec,
+        AROS_LH2(APTR, AllocVec,
 
 /*  SYNOPSIS */
         AROS_LHA(ULONG,  byteSize,     D0),

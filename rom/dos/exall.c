@@ -1,5 +1,5 @@
 /*
-    Copyright © 1995-2013, The AROS Development Team. All rights reserved.
+    Copyright ? 1995-2013, The AROS Development Team. All rights reserved.
     $Id$
 
     Desc: Examine a directory.
@@ -111,7 +111,7 @@
     /* Get pointer to filehandle */
     struct FileLock *fl = BADDR(lock);
     LONG status = 0;
-    SIPTR err = 0;
+    LONG err = 0;
 
     /* If fib != NULL it means we've already been called and found out that
        we needed to emulate ExAll, thus don't waste time sending messages to the

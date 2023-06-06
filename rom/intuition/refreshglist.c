@@ -17,7 +17,7 @@
 
 #include <intuition/classes.h>
 
-BOOL qualifygadget(struct Gadget *gadgets,WORD mustbe, WORD mustnotbe,struct IntuitionBase *IntuitionBase);
+BOOL qualifygadget(struct Gadget *gadgets,LONG mustbe, LONG mustnotbe,struct IntuitionBase *IntuitionBase);
 void rendergadget(struct Gadget *gadgets,struct Window *window, struct Requester *requester,struct IntuitionBase *IntuitionBase);
 struct Gadget *findprevgadget(struct Gadget *gadget,struct Window *window,struct IntuitionBase *IntuitionBase);
 
@@ -33,7 +33,7 @@ struct Gadget *findprevgadget(struct Gadget *gadget,struct Window *window,struct
         AROS_LHA(struct Gadget    *, gadgets, A0),
         AROS_LHA(struct Window    *, window, A1),
         AROS_LHA(struct Requester *, requester, A2),
-        AROS_LHA(WORD              , numGad, D0),
+        AROS_LHA(LONG              , numGad, D0),
 
 /*  LOCATION */
         struct IntuitionBase *, IntuitionBase, 72, Intuition)
@@ -117,13 +117,13 @@ struct Gadget *findprevgadget(struct Gadget *gadget,struct Window *window,struct
 } /* RefreshGList */
 
 void int_refreshglist(struct Gadget *gadgets, struct Window *window,
-                      struct Requester *requester, WORD numGad, WORD mustbe, WORD mustnotbe,
+                      struct Requester *requester, LONG numGad, LONG mustbe, LONG mustnotbe,
                       struct IntuitionBase *IntuitionBase)
 {
 #ifdef GADTOOLSCOMPATIBLE
 
     struct Gadget *gadtoolsgadget = 0;
-    WORD           num = numGad;
+    LONG           num = numGad;
 #endif
 
     DEBUG_INTREFRESHGLIST(dprintf("IntRefreshGList: Gadgets 0x%lx Window 0x%lx Req 0x%lx Num %ld Must 0x%lx MustNot 0x%lx\n",
@@ -183,7 +183,7 @@ void int_refreshglist(struct Gadget *gadgets, struct Window *window,
 #endif
 }
 
-BOOL qualifygadget(struct Gadget *gadgets,WORD mustbe, WORD mustnotbe,struct IntuitionBase *IntuitionBase)
+BOOL qualifygadget(struct Gadget *gadgets,LONG mustbe, LONG mustnotbe,struct IntuitionBase *IntuitionBase)
 {
     if ((mustbe != 0) || (mustnotbe != 0))
     {

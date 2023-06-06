@@ -14,7 +14,7 @@
 
     NAME */
 
-	AROS_LH3(void, InitTmpRas,
+	AROS_LH3(struct TmpRas  *, InitTmpRas,
 
 /*  SYNOPSIS */
 	AROS_LHA(struct TmpRas  *, tmpras, A0),

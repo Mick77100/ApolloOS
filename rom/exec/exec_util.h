@@ -2,7 +2,7 @@
 #define _EXEC_UTIL_H
 
 /*
-    Copyright © 1995-2017, The AROS Development Team. All rights reserved.
+    Copyright ? 1995-2017, The AROS Development Team. All rights reserved.
     $Id$
 
     Desc: Utility functions for exec.
@@ -124,7 +124,7 @@ IPTR *InternalFindResident(const UBYTE *name, IPTR *list);
 void FastPutMsg(struct MsgPort *port, struct Message *message, struct ExecBase *SysBase);
 void InternalPutMsg(struct MsgPort *port, struct Message *message, struct ExecBase *SysBase);
 
-LONG AllocTaskSignal(struct Task *ThisTask, LONG signalNum, struct ExecBase *SysBase);
+LONG AllocTaskSignal(struct Task *ThisTask, BYTE signalNum, struct ExecBase *SysBase);
 
 static inline void InitMsgPort(struct MsgPort *ret)
 {

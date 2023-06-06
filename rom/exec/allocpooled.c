@@ -32,10 +32,10 @@
 #include <exec/memheaderext.h>
 #include <proto/exec.h>
 
-        AROS_LH2(void, AllocPooled,
+        AROS_LH2(void *, AllocPooled,
 
 /*  SYNOPSIS */
-        AROS_LHA(void,  poolHeader, A0),
+        AROS_LHA(void *,  poolHeader, A0),
         AROS_LHA(ULONG,  memSize,    D0),
 
 /*  LOCATION */

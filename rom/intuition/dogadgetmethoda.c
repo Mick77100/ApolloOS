@@ -22,7 +22,7 @@
 #include <intuition/intuition.h>
 #include <proto/intuition.h>
 
-        AROS_LH4(ULONG, DoGadgetMethodA,			/* IS AN ULONG ON AMIGA SOURCE AS FINAL RESULT  NOT IPTR */
+        AROS_LH4(IPTR, DoGadgetMethodA,
 
 /*  SYNOPSIS */
         AROS_LHA(struct Gadget    *, gad, A0),

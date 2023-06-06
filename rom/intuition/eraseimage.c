@@ -28,8 +28,8 @@
 /*  SYNOPSIS */
         AROS_LHA(struct RastPort *, rp, A0),
         AROS_LHA(struct Image    *, image, A1),
-        AROS_LHA(WORD             , leftOffset, D0),
-        AROS_LHA(WORD             , topOffset, D1),
+        AROS_LHA(LONG             , leftOffset, D0),
+        AROS_LHA(LONG             , topOffset, D1),
 
 /*  LOCATION */
         struct IntuitionBase *, IntuitionBase, 105, Intuition)

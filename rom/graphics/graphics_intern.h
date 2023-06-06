@@ -1,7 +1,7 @@
 #ifndef GRAPHICS_INTERN_H
 #define GRAPHICS_INTERN_H
 /*
-    Copyright © 1995-2017, The AROS Development Team. All rights reserved.
+    Copyright ? 1995-2017, The AROS Development Team. All rights reserved.
     $Id$
 
     Desc: Internal header file for graphics.library
@@ -310,8 +310,8 @@ extern void UninstallFB(struct monitor_driverdata *mdd, struct GfxBase *GfxBase)
 /* functions in support.c */
 extern BOOL pattern_pen(struct RastPort *rp
 	, WORD x, WORD y
-	, ULONG apen, ULONG bpen
-	, ULONG *pixval_ptr
+	, WORD apen, WORD bpen
+	, WORD *pixval_ptr
 	, struct GfxBase *GfxBase);
 
 /* function for area opeartions */

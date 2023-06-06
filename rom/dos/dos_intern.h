@@ -1,5 +1,5 @@
 /*
-    Copyright © 1995-2020, The AROS Development Team. All rights reserved.
+    Copyright ? 1995-2020, The AROS Development Team. All rights reserved.
     $Id$
 
     Desc: Internal types and stuff for dos
@@ -103,10 +103,10 @@ LONG RootDir(struct DevProc *dvp, struct DosLibrary *DOSBase);
 /* Packet I/O */
 struct DosPacket *allocdospacket(void);
 void freedospacket(struct DosPacket *dp);
-SIPTR dopacket(SIPTR *res2, struct MsgPort *port, LONG action, SIPTR arg1, SIPTR arg2, SIPTR arg3, SIPTR arg4, SIPTR arg5, SIPTR arg6, SIPTR arg7);
+LONG dopacket(LONG *res2, struct MsgPort *port, LONG action, LONG arg1, LONG arg2, LONG arg3, LONG arg4, LONG arg5, LONG arg6, LONG arg7);
 void internal_SendPkt(struct DosPacket *dp, struct MsgPort *port, struct MsgPort *replyport);
 struct DosPacket *internal_WaitPkt(struct MsgPort *msgPort);
-void internal_ReplyPkt(struct DosPacket *dp, struct MsgPort *replyPort, SIPTR res1, LONG res2);
+void internal_ReplyPkt(struct DosPacket *dp, struct MsgPort *replyPort, LONG res1, LONG res2);
 SIPTR handleNIL(LONG action, SIPTR arg1, SIPTR arg2, SIPTR arg3);
 
 #define dopacket5(base, res2, port, action, arg1, arg2, arg3, arg4, arg5) dopacket(res2, port, action, (SIPTR)(arg1), (SIPTR)(arg2), (SIPTR)(arg3), (SIPTR)(arg4), (SIPTR)(arg5), 0, 0)

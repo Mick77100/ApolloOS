@@ -20,7 +20,7 @@
 /*  SYNOPSIS */
         AROS_LHA(struct Window *, window, A0),
         AROS_LHA(struct Gadget *, gadget, A1),
-        AROS_LHA(UWORD          , position, D0),
+        AROS_LHA(ULONG          , position, D0),
 
 /*  LOCATION */
          struct IntuitionBase *, IntuitionBase, 7, Intuition)

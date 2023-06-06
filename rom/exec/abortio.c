@@ -1,5 +1,5 @@
 /*
-    Copyright © 1995-2001, The AROS Development Team. All rights reserved.
+    Copyright ? 1995-2001, The AROS Development Team. All rights reserved.
     $Id$
 
     Desc: Abort an I/O request.
@@ -15,7 +15,7 @@
 
     NAME */
 
-	AROS_LH1(void, AbortIO,
+	AROS_LH1(LONG, AbortIO,
 
 /*  SYNOPSIS */
 	AROS_LHA(struct IORequest *, iORequest, A1),

@@ -1,5 +1,5 @@
 /*
-    Copyright © 1995-2011, The AROS Development Team. All rights reserved.
+    Copyright ? 1995-2011, The AROS Development Team. All rights reserved.
     $Id$
 
     Desc: Search a resident module by name
@@ -21,7 +21,7 @@
 	AROS_LH1(struct Resident *, FindResident,
 
 /*  SYNOPSIS */
-	AROS_LHA(const_STRPTR *, name, A1),
+	AROS_LHA(const UBYTE *, name, A1),
 
 /*  LOCATION */
 	struct ExecBase *, SysBase, 16, Exec)
@@ -67,7 +67,7 @@
     AROS_LIBFUNC_EXIT
 } /* FindResident */
 
-IPTR *InternalFindResident(const_STRPTR *name, IPTR *list)
+IPTR *InternalFindResident(const UBYTE *name, IPTR *list)
 {
     if (list)
     {

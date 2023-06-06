@@ -1,5 +1,5 @@
 /*
-    Copyright © 1995-2012, The AROS Development Team. All rights reserved.
+    Copyright ? 1995-2012, The AROS Development Team. All rights reserved.
     $Id$
 
     Allocate memory from a specific MemHeader.
@@ -23,7 +23,7 @@
 
     NAME */
 
-        AROS_LH2(void, Allocate,
+        AROS_LH2(APTR, Allocate,
 
 /*  SYNOPSIS */
         AROS_LHA(struct MemHeader *, freeList, A0),
