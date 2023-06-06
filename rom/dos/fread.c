@@ -20,7 +20,7 @@
 
 /*  SYNOPSIS */
         AROS_LHA(BPTR , fh, D1),
-        AROS_LHA(APTR , block, D2),
+        AROS_LHA(CONST_STRPTR , block, D2),
         AROS_LHA(ULONG, blocklen, D3),
         AROS_LHA(ULONG, number, D4),
 

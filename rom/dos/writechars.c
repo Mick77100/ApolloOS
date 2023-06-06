@@ -18,7 +18,7 @@
 
 /*  SYNOPSIS */
         AROS_LHA(CONST_STRPTR, buf, D1),
-        AROS_LHA(ULONG, buflen, D2),
+        AROS_LHA(LONG, buflen, D2),
 
 /*  LOCATION */
         struct DosLibrary *, DOSBase, 157, Dos)

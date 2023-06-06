@@ -20,7 +20,7 @@
 
 /*  SYNOPSIS */
         AROS_LHA(BPTR, file,   D1),
-        AROS_LHA(APTR, buffer, D2),
+        AROS_LHA(void *, buffer, D2),
         AROS_LHA(LONG, length, D3),
 
 /*  LOCATION */

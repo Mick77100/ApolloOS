@@ -15,11 +15,11 @@
 #include <exec/types.h>
 #include <proto/dos.h>
 
-        AROS_LH3(LONG, MakeLink,
+        AROS_LH3(BOOL, MakeLink,
 
 /*  SYNOPSIS */
         AROS_LHA(CONST_STRPTR, name, D1),
-        AROS_LHA(SIPTR,   dest, D2),
+        AROS_LHA(LONG,   dest, D2),
         AROS_LHA(LONG  , soft, D3),
 
 /*  LOCATION */
@@ -69,7 +69,7 @@
     if (getpacketinfo(DOSBase, name, &phs))
     {
         status = dopacket4(DOSBase, NULL, phs.port, ACTION_MAKE_LINK,
-            phs.lock, phs.name, (SIPTR)dest, soft ? LINK_SOFT: LINK_HARD);
+            phs.lock, phs.name, (LONG)dest, soft ? LINK_SOFT: LINK_HARD);
         freepacketinfo(DOSBase, &phs);
     }
 

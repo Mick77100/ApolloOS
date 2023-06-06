@@ -14,7 +14,7 @@
 #include <dos/dosextens.h>
 #include <proto/dos.h>
 
-        AROS_LH1(IPTR, CliInitRun,
+        AROS_LH1(LONG, CliInitRun,
 
 /*  SYNOPSIS */
         AROS_LHA(struct DosPacket *, dp, A0),

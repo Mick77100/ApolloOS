@@ -20,7 +20,7 @@
 
 /*  SYNOPSIS */
         AROS_LHA(STRPTR, name,       D1),
-        AROS_LHA(ULONG,  owner_info, D2),
+        AROS_LHA(UONG,  owner_info, D2),
 
 /*  LOCATION */
         struct DosLibrary *, DOSBase, 166, Dos)
@@ -55,7 +55,7 @@
     D(bug("[SetOwner] '%s' %x\n", name, owner_info));
 
     if (getpacketinfo(DOSBase, name, &phs)) {
-        status = dopacket4(DOSBase, NULL, phs.port, ACTION_SET_OWNER, (IPTR)NULL, phs.lock, phs.name, (IPTR)owner_info);
+        status = dopacket4(DOSBase, NULL, phs.port, ACTION_SET_OWNER, (IPTR)NULL, phs.lock, phs.name, (LONG)owner_info);
         freepacketinfo(DOSBase, &phs);
     }
 

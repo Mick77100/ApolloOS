@@ -17,7 +17,7 @@
     NAME */
 #include <proto/dos.h>
 
-        AROS_LH1(BOOL, UnLock,
+        AROS_LH1(void, UnLock,
 
 /*  SYNOPSIS */
         AROS_LHA(BPTR, lock, D1),

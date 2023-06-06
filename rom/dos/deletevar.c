@@ -14,7 +14,7 @@
 #include <dos/var.h>
 #include <proto/dos.h>
 
-        AROS_LH2(LONG, DeleteVar,
+        AROS_LH2(BOOL, DeleteVar,
 
 /*  SYNOPSIS */
         AROS_LHA(CONST_STRPTR, name, D1),

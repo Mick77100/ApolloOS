@@ -24,7 +24,7 @@ STRPTR  writeNumber(char *buffer, ULONG base, ULONG n, BOOL minus,
 /*  SYNOPSIS */
         AROS_LHA(BPTR  , fh      , D1),
         AROS_LHA(CONST_STRPTR, fmt     , D2),
-        AROS_LHA(const IPTR *, argarray, D3),
+        AROS_LHA(LONG *, argarray, D3),
 
 /*  LOCATION */
         struct DosLibrary *, DOSBase, 58, Dos)
@@ -77,7 +77,7 @@ STRPTR  writeNumber(char *buffer, ULONG base, ULONG n, BOOL minus,
 
     LONG    count  = 0;      /* Number of characters written */
     CONST_STRPTR  format = fmt;
-    const IPTR   *args   = argarray;
+    const LONG   *args   = argarray;
 
     STRPTR  string;
     STRPTR  wBuf;            /* Pointer to first number character in buffer */

@@ -25,7 +25,7 @@ static LONG getvar_from(const char *name, const char *volume, STRPTR buffer, LON
         AROS_LHA(CONST_STRPTR, name,   D1),
         AROS_LHA(STRPTR,       buffer, D2),
         AROS_LHA(LONG,         size,   D3),
-        AROS_LHA(LONG,         flags,  D4),
+        AROS_LHA(ULONG,         flags,  D4),
 
 /*  LOCATION */
         struct DosLibrary *, DOSBase, 151, Dos)
@@ -208,7 +208,7 @@ static LONG getvar_from(const char *name, const char *volume, STRPTR buffer, LON
 } /* GetVar */
 
 
-static LONG getvar_from(const char *name, const char *volume, STRPTR buffer, LONG size, LONG flags, struct DosLibrary *DOSBase)
+static LONG getvar_from(const char *name, const char *volume, STRPTR buffer, LONG size, ULONG flags, struct DosLibrary *DOSBase)
 {
     BPTR file;
     LONG i;

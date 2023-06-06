@@ -14,7 +14,7 @@
     NAME */
 #include <proto/dos.h>
 
-        AROS_LH2(LONG, AddBuffers,
+        AROS_LH2(BOOL, AddBuffers,
 
 /*  SYNOPSIS */
         AROS_LHA(CONST_STRPTR, devicename, D1),
