@@ -22,7 +22,7 @@
 /*  SYNOPSIS */
         AROS_LHA(struct InputEvent *, event, A0),
         AROS_LHA(STRPTR             , buffer, A1),
-        AROS_LHA(LONG               , length, D1),
+        AROS_LHA(WORD               , length, D1),
         AROS_LHA(struct KeyMap     *, keyMap, A2),
 
 /*  LOCATION */
