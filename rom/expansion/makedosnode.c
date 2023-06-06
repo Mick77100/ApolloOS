@@ -25,7 +25,7 @@
 	AROS_LH1(struct DeviceNode *, MakeDosNode,
 
 /*  SYNOPSIS */
-	AROS_LHA(APTR, parmPacket, A0),
+	AROS_LHA(void *, parmPacket, A0),
 
 /*  LOCATION */
 	struct ExpansionBase *, ExpansionBase, 24, Expansion)

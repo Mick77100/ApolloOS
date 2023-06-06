@@ -27,7 +27,7 @@
 	AROS_LH4(BOOL, AddBootNode,
 
 /*  SYNOPSIS */
-	AROS_LHA(LONG               , bootPri, D0),
+	AROS_LHA(BYTE               , bootPri, D0),
 	AROS_LHA(ULONG              , flags, D1),
 	AROS_LHA(struct DeviceNode *, deviceNode, A0),
 	AROS_LHA(struct ConfigDev  *, configDev, A1),
