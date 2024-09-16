@@ -8,7 +8,7 @@
 
 #include "card_intern.h"
 
-AROS_LH2(ULONG, CardResetRemove,
+AROS_LH2(BOOL, CardResetRemove,
 	AROS_LHA(struct CardHandle*, handle, A1),
 	AROS_LHA(ULONG, flag, D0),
 	struct CardResource*, CardResource, 7, Card)

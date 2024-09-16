@@ -10,7 +10,7 @@
 
 #include "card_intern.h"
 
-AROS_LH1(ULONG, CardResetCard,
+AROS_LH1(BOOL, CardResetCard,
 	AROS_LHA(struct CardHandle*, handle, A1),
 	struct CardResource*, CardResource, 11, Card)
 {

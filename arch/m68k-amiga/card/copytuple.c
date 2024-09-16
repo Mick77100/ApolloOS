@@ -79,7 +79,7 @@ static BOOL getlelong(ULONG addr, UBYTE offset, UBYTE nextbyte, ULONG *outp)
     return TRUE;
 }
 
-AROS_LH4(ULONG, CopyTuple,
+AROS_LH4(BOOL, CopyTuple,
 	AROS_LHA(struct CardHandle*, handle, A1),
 	AROS_LHA(UBYTE*, buffer, A0),
 	AROS_LHA(ULONG, tuplecode, D1),
