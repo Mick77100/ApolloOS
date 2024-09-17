@@ -203,7 +203,7 @@ struct DBufPacket
 /* a structure for the 16 collision procedure addresses */
 struct collTable
 {
-    int (*collPtrs[16])();
+    LONG (*collPtrs[16])();
 };
 
 /* cxref mixes up with the function pointers in the previous definition */

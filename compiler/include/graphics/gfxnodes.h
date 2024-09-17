@@ -23,7 +23,7 @@ struct ExtendedNode
     char  * xln_Name;
     UBYTE   xln_Subsystem;    /* see below */
     UBYTE   xln_Subtype;      /* see below */
-    APTR    xln_Library;
+    LONG    xln_Library;
     LONG (* xln_Init)();
 };
 

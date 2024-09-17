@@ -150,13 +150,13 @@ struct ColorMap
     UBYTE Flags;      				/* see below */
     UBYTE Type;       				/* Colormap type (reflects version), see below */
     UWORD Count;				/* Number of palette entries */
-    UWORD *ColorTable;				/* Table of high nibbles of color values (see description above) */
+    APTR ColorTable;				/* Table of high nibbles of color values (see description above) */
 
     /* The following fields are present only if Type >= COLORMAP_TYPE_V36 */
 
     struct ViewPortExtra * cm_vpe;		/* ViewPortExtra, for faster access */
 
-    UWORD *LowColorBits;			/* Table of low nibbles of color values (see above) */
+    APTR LowColorBits;			/* Table of low nibbles of color values (see above) */
     UBYTE TransparencyPlane;
     UBYTE SpriteResolution;			/* see below */
     UBYTE SpriteResDefault;
