@@ -111,8 +111,8 @@ struct AppMessage
 {
     struct Message am_Message;
     UWORD          am_Type;     /* see below */
-    IPTR           am_UserData;
-    IPTR           am_ID;
+    ULONG           am_UserData;
+    ULONG           am_ID;
     LONG           am_NumArgs;
     struct WBArg * am_ArgList;
     UWORD          am_Version;  /* see below */
@@ -165,8 +165,8 @@ struct AppWindowDropZoneMsg
 {
     struct RastPort *adzm_RastPort;
     struct IBox      adzm_DropZoneBox;
-    IPTR             adzm_ID;
-    IPTR             adzm_UserData;
+    ULONG             adzm_ID;
+    ULONG             adzm_UserData;
     LONG             adzm_Action;  /* see below */
 };
 
