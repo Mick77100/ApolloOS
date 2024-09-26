@@ -86,7 +86,7 @@ struct Task
 struct StackSwapStruct
 {
     APTR  stk_Lower;   /* Lowest byte of stack */
-    APTR  stk_Upper;   /* Upper end of stack (size + Lowest) */
+    ULONG  stk_Upper;   /* Upper end of stack (size + Lowest) */
     APTR  stk_Pointer; /* Stack pointer at switch point */
 };
 
