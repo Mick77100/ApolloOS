@@ -206,6 +206,8 @@ struct ToolNode
 
 #define DTMSG_TYPE_OFFSET               2100
 
+; New for V44
+#define DTERROR_NOT_AVAILABLE			2009
 
 #endif /* DATATYPES_DATATYPES_H */
 
