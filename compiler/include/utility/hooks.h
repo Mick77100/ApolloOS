@@ -20,8 +20,8 @@
 struct Hook
 {
     struct MinNode  h_MinNode;
-    APTR	    h_Entry;        /* Main entry point */
-    APTR	    h_SubEntry;     /* Secondary entry point */
+    ULONG	    h_Entry;        /* Main entry point */
+    ULONG	    h_SubEntry;     /* Secondary entry point */
     APTR	    h_Data;	    /* Whatever you want */
 };
 
