@@ -63,7 +63,7 @@ struct NewGadget
     WORD ng_Width;
     WORD ng_Height;
 
-    CONST_STRPTR      ng_GadgetText;
+    UBYTE      ng_GadgetText;
     struct TextAttr * ng_TextAttr;
 
     UWORD ng_GadgetID;
@@ -122,8 +122,8 @@ struct NewMenu
 {
     UBYTE        nm_Type;          /* see below */
 //    BYTE         nm_Pad;
-    CONST_STRPTR nm_Label;         /* may be a STRPTR or NM_BARLABEL (see below) */
-    CONST_STRPTR nm_CommKey;
+    STRPTR		 nm_Label;         /* may be a STRPTR or NM_BARLABEL (see below) */
+    STRPTR 		 nm_CommKey;
     UWORD        nm_Flags;         /* see below */
     LONG         nm_MutualExclude;
     APTR         nm_UserData;

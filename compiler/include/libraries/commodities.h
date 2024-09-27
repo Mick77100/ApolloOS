@@ -25,9 +25,9 @@ typedef LONG (*PFL)();
 struct NewBroker
 {
     BYTE             nb_Version;         /* see below */
-    CONST_STRPTR     nb_Name;
-    CONST_STRPTR     nb_Title;
-    CONST_STRPTR     nb_Descr;
+    STRPTR    		 nb_Name;
+    STRPTR		     nb_Title;
+    STRPTR		     nb_Descr;
     WORD             nb_Unique;          /* see below */
     WORD             nb_Flags;           /* see below */
     BYTE             nb_Pri;

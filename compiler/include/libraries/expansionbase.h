@@ -55,8 +55,8 @@ struct ExpansionBase
     struct Library      LibNode;
     UBYTE               Flags;          /* Flags, read only */
     UBYTE               eb_Private01;
-    IPTR                eb_Private02;
-    IPTR                eb_Private03;
+    ULONG                eb_Private02;
+    ULONG                eb_Private03;
     struct CurrentBinding eb_Private04;
     struct List         BoardList;      /* BoardList - private */
     struct List         MountList;      /* BootNode entries - public */

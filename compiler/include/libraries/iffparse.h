@@ -27,7 +27,7 @@
 
 struct IFFHandle
 {
-    IPTR  iff_Stream;
+    ULONG  iff_Stream;
     ULONG iff_Flags;  /* see below */
     LONG  iff_Depth;
 };

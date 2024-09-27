@@ -144,6 +144,7 @@ struct XRef
     STRPTR		 xr_File;	/* Name of document file */
     STRPTR		 xr_Name;	/* Name of item */
     LONG		 xr_Line;	/* Line defined at */
+	ULONG			xr_Reserved[2];			/* Don't touch! (V44) */
 };
 
 #define	XRSIZE	(sizeof (struct XRef))
