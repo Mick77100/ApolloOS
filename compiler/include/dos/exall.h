@@ -95,7 +95,7 @@ struct ExAllControl
 {
       /* The number of entries that were returned in the buffer. */
     ULONG         eac_Entries;
-    IPTR          eac_LastKey;     /* PRIVATE */
+    ULONG          eac_LastKey;     /* PRIVATE */
       /* Parsed pattern string, as created by ParsePattern(). This may be NULL.
       */
     UBYTE       * eac_MatchString;
